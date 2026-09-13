@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Огляд портфеля — Реєстр активів АРМА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="brand"><b>Реєстр активів</b><span>АРМА · внутрішня система</span></div>
+    <nav>
+      <a href="index.html" class="on">Огляд портфеля</a>
+      <a href="assets.html">Реєстр активів</a>
+      <a href="money.html">Кошти та ОВДП</a>
+      <a href="corporate.html">Корпоративні права</a>
+      <a href="land.html">Земельні ділянки</a>
+      <a href="admin.html">Адміністрування</a>
+      <a href="reports.html">Звіти</a>
+    </nav>
+    <div class="who"><b>Петренко П. П.</b>Центральне МТУ · виконавець</div>
+  </aside>
+  <main>
+    <div class="topbar">
+      <div><h1>Огляд портфеля</h1><p class="sub">Стан 60 530 активів на 24 серпня 2026 року</p></div>
+      <div class="demo-flag">Демонстраційна версія · дані умовні</div>
+    </div>
+
+<section class="rights">
+  <p class="lead">Головне питання портфеля — не скільки активів обліковується, а скількома з них
+  Національне агентство фактично має право управляти. Смуга показує розподіл 60 530 активів
+  за обсягом повноважень, розрахованим із хронології судових рішень.</p>
+  <div class="bar">
+    <div class="s-ok" style="width:36.1%">36.1%</div>
+    <div class="s-lim" style="width:15.4%">15.4%</div>
+    <div class="s-lost" style="width:30.1%">30.1%</div>
+    <div class="s-unk" style="width:18.4%">18.4%</div>
+  </div>
+  <div class="legend">
+    <div class="l-ok"><b>21 840</b>управління в повному обсязі</div>
+    <div class="l-lim"><b>9 310</b>обмежене — арешт без заборони користування</div>
+    <div class="l-lost"><b>18 235</b>право втрачено: арешт скасовано або актив вилучено</div>
+    <div class="l-unk"><b>11 145</b>потребує уточнення правових підстав</div>
+  </div>
+</section>
+
+<h2>Ключові показники</h2>
+<div class="grid g4">
+  <div class="panel"><h3>Оцінена вартість <span>чинні звіти</span></h3>
+    <div class="figure">915,6<small>млн грн</small></div>
+    <p class="hint">Оцінку мають 24 % активів. Решта потребує замовлення оцінки.</p></div>
+  <div class="panel"><h3>В управлінні <span>договори діють</span></h3>
+    <div class="figure">3 868<small>активів</small></div>
+    <p class="hint">Ще 2 066 перебувають у процедурі конкурсного відбору управителя.</p></div>
+  <div class="panel"><h3>Фотофіксація <span>виконано</span></h3>
+    <div class="figure">37,4<small>%</small></div>
+    <p class="hint">22 638 активів мають щонайменше п’ять знімків у сховищі.</p></div>
+  <div class="panel"><h3>Геоприв’язка <span>перевірено</span></h3>
+    <div class="figure">42,3<small>%</small></div>
+    <p class="hint">25 604 активи мають координати, звірені зворотним пошуком.</p></div>
+</div>
+
+<h2>Структура портфеля</h2>
+<div class="grid g2">
+  <div class="panel"><h3>За видами активів <span>13 найбільших груп</span></h3>
+    <canvas id="chKinds" height="260"></canvas></div>
+  <div class="panel"><h3>Інвестиційна привабливість <span>за результатами скринінгу</span></h3>
+    <canvas id="chInvest" height="260"></canvas></div>
+</div>
+
+<div class="grid g2" style="margin-top:18px">
+  <div class="panel"><h3>Розподіл за МТУ <span>територіальна юрисдикція</span></h3>
+    <canvas id="chMtu" height="240"></canvas></div>
+  <div class="panel"><h3>Стан арешту <span>за даними інвентаризації</span></h3>
+    <canvas id="chArrest" height="240"></canvas></div>
+</div>
+
+<h2>Потребують рішення найближчим часом</h2>
+<div class="wrap-tbl"><table>
+<thead><tr><th>№ активу</th><th>Актив</th><th>МТУ</th><th>Правовий стан</th><th>Що зробити</th></tr></thead>
+<tbody>
+<tr><td class="id">5410/0301/2022</td><td>Вагон-цистерна, партія 8 од.</td><td>Південно-східне МТУ</td>
+<td><span class="tag t-lost">Право втрачено</span></td><td>Звернення до прокурора щодо повторного арешту</td></tr>
+<tr><td class="id">2316/0403/2022</td><td>Частка у статутному капіталі ТОВ «ВОЛИЦЯ-АГРО»</td><td>Західне МТУ</td>
+<td><span class="tag t-lim">Обмежене</span></td><td>Клопотання про заборону користування</td></tr>
+<tr><td class="id">7781/0201/2024</td><td>Трактор John Deere 8400R</td><td>Північно-східне МТУ</td>
+<td><span class="tag t-unk">Потребує уточнення</span></td><td>Встановити чинність арешту, провести огляд</td></tr>
+</tbody></table></div>
+
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+const C={ink:'#101C2E',acc:'#14618F',ok:'#2C6E49',lim:'#B26B00',lost:'#9E2A2B',unk:'#7A828C'};
+const base={responsive:true,plugins:{legend:{display:false}},
+  scales:{x:{grid:{display:false}},y:{grid:{color:'#EDF0F3'},border:{display:false}}}};
+new Chart(chKinds,{type:'bar',data:{labels:ARMA.kinds.map(k=>k[0]),
+ datasets:[{data:ARMA.kinds.map(k=>k[1]),backgroundColor:'#14618F',borderRadius:2}]},
+ options:{...base,indexAxis:'y',scales:{x:{grid:{color:'#EDF0F3'}},y:{grid:{display:false},ticks:{font:{size:11}}}}}});
+new Chart(chInvest,{type:'doughnut',data:{labels:ARMA.invest.map(k=>k[0]),
+ datasets:[{data:ARMA.invest.map(k=>k[1]),backgroundColor:['#2C6E49','#7FA88E','#B26B00','#C6CCD3']}]},
+ options:{responsive:true,cutout:'58%',plugins:{legend:{position:'right',labels:{font:{size:11},boxWidth:12}}}}});
+new Chart(chMtu,{type:'bar',data:{labels:ARMA.mtu.map(k=>k[0].replace(' МТУ','').replace(' ТУ','')),
+ datasets:[{data:ARMA.mtu.map(k=>k[1]),backgroundColor:ARMA.mtu.map(k=>k[0]==='Не розподілено'?'#B26B00':'#14618F'),borderRadius:2}]},
+ options:{...base,scales:{x:{grid:{display:false},ticks:{font:{size:10}}},y:{grid:{color:'#EDF0F3'}}}}});
+new Chart(chArrest,{type:'bar',data:{labels:ARMA.arrest.map(k=>k[0]),
+ datasets:[{data:ARMA.arrest.map(k=>k[1]),backgroundColor:'#33506E',borderRadius:2}]},
+ options:{...base,indexAxis:'y',scales:{x:{grid:{color:'#EDF0F3'}},y:{grid:{display:false},ticks:{font:{size:10}}}}}});
+</script>
+</body>
+</html>

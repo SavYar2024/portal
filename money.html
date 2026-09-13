@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Кошти та ОВДП — Реєстр активів АРМА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="brand"><b>Реєстр активів</b><span>АРМА · внутрішня система</span></div>
+    <nav>
+      <a href="index.html">Огляд портфеля</a>
+      <a href="assets.html">Реєстр активів</a>
+      <a href="money.html" class="on">Кошти та ОВДП</a>
+      <a href="corporate.html">Корпоративні права</a>
+      <a href="land.html">Земельні ділянки</a>
+      <a href="admin.html">Адміністрування</a>
+      <a href="reports.html">Звіти</a>
+    </nav>
+    <div class="who"><b>Петренко П. П.</b>Центральне МТУ · виконавець</div>
+  </aside>
+  <main>
+    <div class="topbar">
+      <div><h1>Кошти та ОВДП</h1><p class="sub">Розміщення грошових активів і дохід від управління</p></div>
+      <div class="demo-flag">Демонстраційна версія · дані умовні</div>
+    </div>
+
+<div class="grid g4">
+  <div class="panel"><h3>На депозитах</h3><div class="figure">878<small>млн грн</small></div>
+    <p class="hint">4 банки, середня ставка 14,9 %</p></div>
+  <div class="panel"><h3>В ОВДП</h3><div class="figure">602<small>млн грн</small></div>
+    <p class="hint">3 випуски, погашення 2026–2028</p></div>
+  <div class="panel"><h3>Річний дохід</h3><div class="figure">230<small>млн грн</small></div>
+    <p class="hint">Розрахунково за чинними ставками</p></div>
+  <div class="panel"><h3>Готівка та рахунки</h3><div class="figure">916<small>млн грн</small></div>
+    <p class="hint">1 722 активи, потребують розміщення</p></div>
+</div>
+
+<h2>Розміщення коштів</h2>
+<div class="grid g2">
+  <div class="panel"><h3>Структура <span>депозити проти ОВДП</span></h3>
+    <canvas id="chMix" height="220"></canvas></div>
+  <div class="panel"><h3>Строки погашення <span>млн грн за роками</span></h3>
+    <canvas id="chMat" height="220"></canvas></div>
+</div>
+
+<h2>Депозити</h2>
+<div class="wrap-tbl"><table>
+<thead><tr><th>Банк</th><th class="num">Сума, грн</th><th>Строк</th><th class="num">Ставка</th>
+<th class="num">Дохід за рік, грн</th></tr></thead>
+<tbody><tr><td>АТ «Ощадбанк»</td><td class="num">412 500 000</td><td>12 міс.</td><td class="num">15.5 %</td><td class="num">63 937 500</td></tr><tr><td>АТ «Укрексімбанк»</td><td class="num">268 300 000</td><td>9 міс.</td><td class="num">14.8 %</td><td class="num">39 708 400</td></tr><tr><td>АТ «Укргазбанк»</td><td class="num">155 900 000</td><td>6 міс.</td><td class="num">14.2 %</td><td class="num">22 137 800</td></tr><tr><td>АБ «Укргазбанк» (USD)</td><td class="num">41 200 000</td><td>12 міс.</td><td class="num">3.1 %</td><td class="num">1 277 200</td></tr></tbody></table></div>
+
+<h2>Облігації внутрішньої державної позики</h2>
+<div class="wrap-tbl"><table>
+<thead><tr><th>ISIN</th><th class="num">Обсяг, грн</th><th>Погашення</th><th class="num">Дохідність</th>
+<th class="num">Дохід за рік, грн</th></tr></thead>
+<tbody><tr><td class="id">UA4000227371</td><td class="num">320 000 000</td><td>18.03.2027</td><td class="num">17.2 %</td><td class="num">55 040 000</td></tr><tr><td class="id">UA4000229104</td><td class="num">185 400 000</td><td>12.09.2026</td><td class="num">16.4 %</td><td class="num">30 405 600</td></tr><tr><td class="id">UA4000231688</td><td class="num">96 800 000</td><td>24.06.2028</td><td class="num">17.9 %</td><td class="num">17 327 200</td></tr></tbody></table></div>
+<div class="note" style="margin-top:16px">Кошти, що надійшли від реалізації активів, розміщуються
+на депозитних рахунках або в ОВДП до ухвалення остаточного судового рішення. Панель показує,
+де саме перебувають кошти і який дохід вони приносять.</div>
+
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+new Chart(chMix,{type:'doughnut',data:{labels:['Депозити','ОВДП','Нерозміщені кошти'],
+ datasets:[{data:[877900000,602200000,915610488],
+ backgroundColor:['#14618F','#2C6E49','#B26B00']}]},
+ options:{cutout:'58%',plugins:{legend:{position:'right',labels:{boxWidth:12,font:{size:12}}}}}});
+new Chart(chMat,{type:'bar',data:{labels:['2026','2027','2028'],
+ datasets:[{data:[185,320+412,97],backgroundColor:'#14618F',borderRadius:2}]},
+ options:{plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{grid:{color:'#EDF0F3'}}}}});
+</script>
+</body>
+</html>

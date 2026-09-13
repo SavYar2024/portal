@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Реєстр активів — Реєстр активів АРМА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css">
+
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="brand"><b>Реєстр активів</b><span>АРМА · внутрішня система</span></div>
+    <nav>
+      <a href="index.html">Огляд портфеля</a>
+      <a href="assets.html" class="on">Реєстр активів</a>
+      <a href="money.html">Кошти та ОВДП</a>
+      <a href="corporate.html">Корпоративні права</a>
+      <a href="land.html">Земельні ділянки</a>
+      <a href="admin.html">Адміністрування</a>
+      <a href="reports.html">Звіти</a>
+    </nav>
+    <div class="who"><b>Петренко П. П.</b>Центральне МТУ · виконавець</div>
+  </aside>
+  <main>
+    <div class="topbar">
+      <div><h1>Реєстр активів</h1><p class="sub">Пошук, фільтри та вивантаження</p></div>
+      <div class="demo-flag">Демонстраційна версія · дані умовні</div>
+    </div>
+
+<div class="filters">
+  <input placeholder="Пошук за номером, назвою, ЄДРПОУ" style="min-width:320px">
+  <select><option>Усі види активів</option><option>Залізничний транспорт</option><option>Акції</option><option>Інше майно</option><option>Земельні ділянки</option><option>Електронні пристрої</option><option>Комерційна нерухомість</option><option>Автотранспорт</option><option>Побутові речі</option><option>Сільгосптехніка</option><option>Кошти на рахунках</option><option>С/г продукція</option><option>Житлова нерухомість</option><option>Частки в статутному капіталі</option></select>
+  <select><option>Усі МТУ</option><option>Південно-східне МТУ</option><option>Західне МТУ</option><option>Центральне МТУ</option><option>Південне МТУ</option><option>Північно-східне МТУ</option><option>Центрально-західне ТУ</option><option>Не розподілено</option></select>
+  <select><option>Будь-який правовий стан</option><option>Управління в повному обсязі</option>
+    <option>Обмежене</option><option>Право втрачено</option><option>Потребує уточнення</option></select>
+  <button class="btn">Знайти</button>
+  <button class="btn ghost">Вивантажити в XLSX</button>
+</div>
+<div class="wrap-tbl"><table>
+<thead><tr><th>№ активу</th><th>Найменування</th><th>Вид</th><th>МТУ</th><th>Місцезнаходження</th>
+<th>Правовий стан</th><th class="num">Оцінка, грн</th><th class="num">Фото</th></tr></thead>
+<tbody><tr><td class="id"><a href="asset.html">70/0401/2020</a></td><td>Автомобіль LAND ROVER RANGE ROVER, 2016 р.в.</td><td>Автотранспорт</td><td>Центральне МТУ</td><td>м. Ірпінь, вул. Соборна, 5</td><td><span class="tag t-ok">Управління в повному обсязі</span></td><td class="num">1 850 000</td><td class="num">9</td></tr>
+<tr><td class="id"><a href="asset.html">233/0102/2020</a></td><td>Свинокомплекс, цілісний майновий комплекс</td><td>Комерційна нерухомість</td><td>Західне МТУ</td><td>Закарпатська обл., Ужгородський р-н</td><td><span class="tag t-lim">Обмежене — без заборони користування</span></td><td class="num">47 300 000</td><td class="num">14</td></tr>
+<tr><td class="id"><a href="asset.html">1122/0602/2021</a></td><td>Земельна ділянка 2,4517 га</td><td>Земельні ділянки</td><td>Центральне МТУ</td><td>Київська обл., Бучанський р-н</td><td><span class="tag t-ok">Управління в повному обсязі</span></td><td class="num">6 120 000</td><td class="num">6</td></tr>
+<tr><td class="id"><a href="asset.html">5410/0301/2022</a></td><td>Вагон-цистерна, 8 од. у складі партії</td><td>Залізничний транспорт</td><td>Південно-східне МТУ</td><td>ст. Нижньодніпровськ-Вузол</td><td><span class="tag t-lost">Право втрачено</span></td><td class="num">—</td><td class="num">5</td></tr>
+<tr><td class="id"><a href="asset.html">980/0102/2021</a></td><td>Нежитлове приміщення 412,7 кв. м</td><td>Комерційна нерухомість</td><td>Південне МТУ</td><td>м. Одеса, вул. Грецька, 12</td><td><span class="tag t-ok">Управління в повному обсязі</span></td><td class="num">23 800 000</td><td class="num">11</td></tr>
+<tr><td class="id"><a href="asset.html">2316/0403/2022</a></td><td>Частка у статутному капіталі ТОВ «ВОЛИЦЯ-АГРО», 100 %</td><td>Частки в статутному капіталі</td><td>Західне МТУ</td><td>Львівська обл.</td><td><span class="tag t-lim">Обмежене — без заборони користування</span></td><td class="num">25 400 000</td><td class="num">—</td></tr>
+<tr><td class="id"><a href="asset.html">3044/0501/2023</a></td><td>Кошти на банківському рахунку</td><td>Кошти на рахунках</td><td>Центральне МТУ</td><td>—</td><td><span class="tag t-ok">Управління в повному обсязі</span></td><td class="num">412 500 000</td><td class="num">—</td></tr>
+<tr><td class="id"><a href="asset.html">7781/0201/2024</a></td><td>Трактор John Deere 8400R</td><td>Сільгосптехніка</td><td>Північно-східне МТУ</td><td>Полтавська обл., смт Машівка</td><td><span class="tag t-unk">Потребує уточнення</span></td><td class="num">4 980 000</td><td class="num">7</td></tr>
+</tbody></table></div>
+<p class="hint" style="margin-top:12px">Показано 8 із 60 530 записів. У робочій версії — посторінкове
+завантаження по 50 рядків і збереження фільтрів у посиланні.</p>
+
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>

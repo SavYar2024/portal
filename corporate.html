@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Корпоративні права — Реєстр активів АРМА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="brand"><b>Реєстр активів</b><span>АРМА · внутрішня система</span></div>
+    <nav>
+      <a href="index.html">Огляд портфеля</a>
+      <a href="assets.html">Реєстр активів</a>
+      <a href="money.html">Кошти та ОВДП</a>
+      <a href="corporate.html" class="on">Корпоративні права</a>
+      <a href="land.html">Земельні ділянки</a>
+      <a href="admin.html">Адміністрування</a>
+      <a href="reports.html">Звіти</a>
+    </nav>
+    <div class="who"><b>Петренко П. П.</b>Центральне МТУ · виконавець</div>
+  </aside>
+  <main>
+    <div class="topbar">
+      <div><h1>Корпоративні права</h1><p class="sub">Картка юридичної особи у форматі YouControl</p></div>
+      <div class="demo-flag">Демонстраційна версія · дані умовні</div>
+    </div>
+
+<div class="grid g2">
+  <div class="panel">
+    <h3>ТОВ «ВОЛИЦЯ-АГРО» <span class="id">ЄДРПОУ 41027144</span></h3>
+    <dl class="kv">
+      <dt>Стан юридичної особи</dt><dd>Зареєстровано</dd>
+      <dt>Дата реєстрації</dt><dd>12.04.2017</dd>
+      <dt>Статутний капітал</dt><dd>25 400 000 грн</dd>
+      <dt>Основний КВЕД</dt><dd>01.11 Вирощування зернових культур</dd>
+      <dt>Частка в управлінні АРМА</dt><dd>100.0 %</dd>
+      <dt>Актив у реєстрі</dt><dd><a href="asset.html" class="id">2316/0403/2022</a></dd>
+    </dl>
+    <p class="hint" style="margin-top:14px">Блок наповнюється з YouControl. Перелік полів і
+    розрахунок вартості запитів — в окремому документі.</p>
+  </div>
+  <div class="panel">
+    <h3>Ознаки ризику <span>дані YouControl</span></h3>
+    <span class="chip">Судові справи — 4</span><span class="chip">Податковий борг — немає</span><span class="chip">Санкційні списки — немає</span><span class="chip">Пов’язані особи — 7</span>
+    <h3 style="margin-top:20px">Показники діяльності</h3>
+    <canvas id="chFin" height="200"></canvas>
+  </div>
+</div>
+
+<h2>Корпоративні права в портфелі</h2>
+<div class="grid g2">
+  <div class="panel"><h3>Розподіл за розміром частки</h3><canvas id="chShare" height="220"></canvas></div>
+  <div class="panel"><h3>Стан юридичних осіб <span>за даними ЄДР</span></h3>
+    <canvas id="chState" height="220"></canvas></div>
+</div>
+
+<h2>Перелік</h2>
+<div class="wrap-tbl"><table>
+<thead><tr><th>№ активу</th><th>Юридична особа</th><th>ЄДРПОУ</th><th class="num">Частка</th>
+<th class="num">Статутний капітал, грн</th><th>Стан</th><th>Правовий стан активу</th></tr></thead>
+<tbody>
+<tr><td class="id">2316/0403/2022</td><td>ТОВ «ВОЛИЦЯ-АГРО»</td><td class="id">41027144</td>
+<td class="num">100,0 %</td><td class="num">25 400 000</td><td>Зареєстровано</td>
+<td><span class="tag t-lim">Обмежене</span></td></tr>
+<tr><td class="id">4102/0403/2023</td><td>ТОВ «ПІВДЕНЬ-ЛОГІСТИК»</td><td class="id">39887215</td>
+<td class="num">75,0 %</td><td class="num">12 000 000</td><td>Зареєстровано</td>
+<td><span class="tag t-ok">Повний обсяг</span></td></tr>
+<tr><td class="id">5567/0403/2024</td><td>ПрАТ «КАРПАТИ-ЦЕМЕНТ»</td><td class="id">00293841</td>
+<td class="num">24,9 %</td><td class="num">148 500 000</td><td>Припиняється</td>
+<td><span class="tag t-lost">Право втрачено</span></td></tr>
+</tbody></table></div>
+
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+const b={plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{grid:{color:'#EDF0F3'}}}};
+new Chart(chFin,{type:'bar',data:{labels:['2022','2023','2024','2025'],
+ datasets:[{label:'Дохід, млн грн',data:[84,102,96,118],backgroundColor:'#14618F',borderRadius:2},
+           {label:'Прибуток, млн грн',data:[6,11,4,14],backgroundColor:'#2C6E49',borderRadius:2}]},
+ options:{plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}}},
+ scales:{x:{grid:{display:false}},y:{grid:{color:'#EDF0F3'}}}}});
+new Chart(chShare,{type:'bar',data:{labels:['до 10 %','10–25 %','25–50 %','50–75 %','понад 75 %'],
+ datasets:[{data:[214,168,241,192,208],backgroundColor:'#33506E',borderRadius:2}]},options:b});
+new Chart(chState,{type:'doughnut',data:{labels:['Зареєстровано','Припиняється','Припинено','Банкрутство'],
+ datasets:[{data:[712,146,98,67],backgroundColor:['#2C6E49','#B26B00','#9E2A2B','#7A828C']}]},
+ options:{cutout:'58%',plugins:{legend:{position:'right',labels:{boxWidth:12,font:{size:11}}}}}});
+</script>
+</body>
+</html>

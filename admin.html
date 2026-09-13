@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Адміністрування — Реєстр активів АРМА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css">
+
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="brand"><b>Реєстр активів</b><span>АРМА · внутрішня система</span></div>
+    <nav>
+      <a href="index.html">Огляд портфеля</a>
+      <a href="assets.html">Реєстр активів</a>
+      <a href="money.html">Кошти та ОВДП</a>
+      <a href="corporate.html">Корпоративні права</a>
+      <a href="land.html">Земельні ділянки</a>
+      <a href="admin.html" class="on">Адміністрування</a>
+      <a href="reports.html">Звіти</a>
+    </nav>
+    <div class="who"><b>Петренко П. П.</b>Центральне МТУ · виконавець</div>
+  </aside>
+  <main>
+    <div class="topbar">
+      <div><h1>Адміністрування</h1><p class="sub">Наповнення карток, завантаження файлів, права доступу</p></div>
+      <div class="demo-flag">Демонстраційна версія · дані умовні</div>
+    </div>
+
+<div class="grid g2">
+  <div>
+    <div class="panel">
+      <h3>Картка активу <span class="id">70/0401/2020</span></h3>
+      <p class="hint" style="margin-top:0">Форма показує лише ті блоки, що стосуються обраної
+      категорії активу. Для транспорту — VIN і номерний знак, для землі — кадастровий номер,
+      для корпоративних прав — частка і ЄДРПОУ товариства.</p>
+
+      <div class="grid g2" style="gap:0 16px">
+        <div class="field"><label>Категорія активу</label>
+          <select><option>Рухоме майно</option><option>Нерухоме майно</option>
+          <option>Земельна ділянка</option><option>Грошові кошти</option>
+          <option>Акції та корпоративні права</option><option>Єдиний майновий комплекс</option></select></div>
+        <div class="field"><label>Відповідальне МТУ</label>
+          <select><option>Центральне МТУ</option><option>Західне МТУ</option>
+          <option>Південне МТУ</option><option>Південно-східне МТУ</option>
+          <option>Північно-східне МТУ</option><option>Центрально-західне ТУ</option></select></div>
+        <div class="field"><label>Марка</label><input value="LAND ROVER"></div>
+        <div class="field"><label>Модель</label><input value="RANGE ROVER"></div>
+        <div class="field"><label>VIN-код</label><input value="SALGA2DF6GA123456"></div>
+        <div class="field"><label>Державний номер</label><input value="АА1234ВС"></div>
+        <div class="field"><label>Рік випуску</label><input value="2016"></div>
+        <div class="field"><label>Вартість оцінки, грн</label><input value="1850000"></div>
+      </div>
+
+      <h3 style="margin-top:10px">Зберігання</h3>
+      <div class="grid g2" style="gap:0 16px">
+        <div class="field"><label>Зберігач</label><input value="ТОВ «АВТОСТОЯНКА ПЛЮС»"></div>
+        <div class="field"><label>ЄДРПОУ зберігача</label><input value="11223344"></div>
+        <div class="field"><label>Договір зберігання</label><input value="12/З від 01.03.2019"></div>
+        <div class="field"><label>Вартість зберігання, грн/міс.</label><input value="4200"></div>
+        <div class="field"><label>Місце зберігання</label><input value="м. Ірпінь, вул. Промислова, 12"></div>
+        <div class="field"><label>Строк дії договору</label><input value="до 01.03.2027"></div>
+      </div>
+      <button class="btn">Зберегти зміни</button>
+      <button class="btn ghost">Історія змін</button>
+    </div>
+
+    <h2>Судові рішення за активом</h2>
+    <div class="panel">
+      <div class="grid g2" style="gap:0 16px">
+        <div class="field"><label>Тип рішення</label>
+          <select><option>Ухвала про накладення арешту</option>
+          <option>Ухвала про передачу активу в управління АРМА</option>
+          <option>Ухвала про скасування арешту (повністю)</option>
+          <option>Ухвала про скасування арешту (частково)</option>
+          <option>Рішення суду про конфіскацію</option>
+          <option>Постанова про закриття кримінального провадження</option></select></div>
+        <div class="field"><label>Обсяг арешту</label>
+          <select><option>Із забороною користування та розпорядження</option>
+          <option>Із забороною розпорядження (без заборони користування)</option></select></div>
+        <div class="field"><label>Дата ухвалення</label><input value="05.06.2026"></div>
+        <div class="field"><label>Дата надходження до АРМА</label><input value="18.06.2026"></div>
+        <div class="field"><label>Номер справи</label><input value="757/3036/19-к"></div>
+        <div class="field"><label>Посилання на ЄДРСР</label><input placeholder="https://reyestr.court.gov.ua/..."></div>
+      </div>
+      <div class="note">Одне рішення можна одразу прив’язати до кількох активів — знайдіть їх за
+      номером, назвою або номером судової справи. Правовий стан усіх зазначених активів
+      перерахується автоматично.</div>
+      <div style="margin-top:12px"><button class="btn">Зберегти рішення</button></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="panel">
+      <h3>Завантаження фотографій</h3>
+      <div class="field"><label>Файли</label><input type="file" multiple accept="image/*"></div>
+      <p class="hint">До 10 МБ на знімок, JPEG. Сервер сам зменшує до 1600 px для перегляду
+      і робить мініатюру.</p>
+
+      <div class="note" style="margin:14px 0">
+        <b>Спільний комплект фото.</b> Якщо такі самі знімки вже завантажено для іншого активу —
+        не завантажуйте повторно. Вкажіть номер того активу, і його папка підключиться до цього.
+        Файли на диску не дублюються.
+      </div>
+      <div class="field"><label>Підключити папку іншого активу</label>
+        <input placeholder="Введіть № активу, наприклад 5410/0301/2022"></div>
+      <div class="wrap-tbl" style="margin-bottom:12px"><table>
+        <thead><tr><th>№ активу</th><th>Комплект</th><th class="num">Файлів</th><th></th></tr></thead>
+        <tbody>
+          <tr><td class="id">5410/0301/2022</td><td>Вагон-цистерна, партія</td><td class="num">5</td>
+              <td><a href="#">підключити</a></td></tr>
+          <tr><td class="id">5411/0301/2022</td><td>Вагон-цистерна, партія</td><td class="num">5</td>
+              <td><a href="#">підключити</a></td></tr>
+          <tr><td class="id">5412/0301/2022</td><td>Вагон-цистерна, партія</td><td class="num">5</td>
+              <td><a href="#">підключити</a></td></tr>
+        </tbody></table></div>
+      <p class="hint">Уже підключено до 3 активів. Відключення від одного активу не видаляє файли,
+      доки на них посилається хоча б один інший.</p>
+    </div>
+
+    <div class="panel" style="margin-top:18px">
+      <h3>Завантаження документів</h3>
+      <div class="field"><label>Тип документа</label>
+        <select><option>Технічний паспорт</option><option>Звіт про оцінку</option>
+        <option>Орієнтовний план управління</option><option>Акт огляду</option>
+        <option>Договір зберігання</option><option>Договір управління</option>
+        <option>Судове рішення (скан)</option></select></div>
+      <div class="field"><label>Файл</label><input type="file" accept=".pdf,.doc,.docx,.xls,.xlsx"></div>
+      <p class="hint">PDF, DOC, DOCX, XLS, XLSX. До 25 МБ на файл.</p>
+      <div class="field"><label>Підключити документ іншого активу</label>
+        <input placeholder="Введіть № активу"></div>
+      <button class="btn">Завантажити</button>
+    </div>
+
+    <div class="panel" style="margin-top:18px">
+      <h3>Дисковий простір</h3>
+      <dl class="kv" style="grid-template-columns:150px 1fr">
+        <dt>Фотографії</dt><dd>424 000 файлів · 1,47 ТБ</dd>
+        <dt>Документи</dt><dd>242 000 файлів · 0,36 ТБ</dd>
+        <dt>База даних</dt><dd>8 ГБ</dd>
+        <dt>Резервні копії</dt><dd>0,55 ТБ</dd>
+        <dt>Зайнято</dt><dd><b>2,39 ТБ із 4 ТБ</b></dd>
+      </dl>
+      <div class="bar" style="height:14px;margin-top:10px">
+        <div class="s-ok" style="width:37%"></div>
+        <div class="s-lim" style="width:9%"></div>
+        <div class="s-unk" style="width:14%"></div>
+        <div style="width:40%;background:#E9EDF1"></div>
+      </div>
+      <p class="hint" style="margin-top:8px">Спільні комплекти фото економлять близько 0,4 ТБ
+      на партіях вагонів і однотипних товарах.</p>
+    </div>
+  </div>
+</div>
+
+<h2>Користувачі та права</h2>
+<div class="wrap-tbl"><table>
+<thead><tr><th>Роль</th><th>Кількість</th><th>Перегляд</th><th>Редагування</th><th>Особливості</th></tr></thead>
+<tbody>
+<tr><td>Виконавець МТУ</td><td>6 управлінь</td><td>тільки свої активи</td><td>свої активи</td>
+    <td>не бачить активів інших МТУ</td></tr>
+<tr><td>Виконавець ДМА</td><td>4 відділи</td><td>активи свого відділу</td><td>активи свого відділу</td>
+    <td>доступ до всіх видів активів</td></tr>
+<tr><td>Відділ реалізації</td><td>1 відділ</td><td>усі активи</td><td>блок реалізації</td>
+    <td>вносить результати продажу</td></tr>
+<tr><td>Реєстратор судових рішень</td><td>централізовано</td><td>усі активи</td><td>журнал рішень</td>
+    <td>єдиний, хто вносить ухвали</td></tr>
+<tr><td>Керівництво</td><td>—</td><td>усі активи та звіти</td><td>немає</td>
+    <td>дашборди й вивантаження</td></tr>
+<tr><td>Адміністратор</td><td>—</td><td>усе</td><td>усе, довідники, ролі</td>
+    <td>єдиний, хто змінює довідники</td></tr>
+</tbody></table></div>
+
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>

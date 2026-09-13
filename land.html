@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Земельні ділянки — Реєстр активів АРМА</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="brand"><b>Реєстр активів</b><span>АРМА · внутрішня система</span></div>
+    <nav>
+      <a href="index.html">Огляд портфеля</a>
+      <a href="assets.html">Реєстр активів</a>
+      <a href="money.html">Кошти та ОВДП</a>
+      <a href="corporate.html">Корпоративні права</a>
+      <a href="land.html" class="on">Земельні ділянки</a>
+      <a href="admin.html">Адміністрування</a>
+      <a href="reports.html">Звіти</a>
+    </nav>
+    <div class="who"><b>Петренко П. П.</b>Центральне МТУ · виконавець</div>
+  </aside>
+  <main>
+    <div class="topbar">
+      <div><h1>Земельні ділянки</h1><p class="sub">Кадастрові дані, полігони та завантаження GeoJSON</p></div>
+      <div class="demo-flag">Демонстраційна версія · дані умовні</div>
+    </div>
+
+<div class="grid g4">
+  <div class="panel"><h3>Земельних ділянок</h3><div class="figure">4 764</div>
+    <p class="hint">З них 3 123 мають кадастровий номер</p></div>
+  <div class="panel"><h3>Загальна площа</h3><div class="figure">18 407<small>га</small></div>
+    <p class="hint">За даними завантажених полігонів</p></div>
+  <div class="panel"><h3>Полігони завантажено</h3><div class="figure">2 891</div>
+    <p class="hint">GeoJSON, зіставлено за кадастровим номером</p></div>
+  <div class="panel"><h3>Без геоприв’язки</h3><div class="figure">1 641</div>
+    <p class="hint">Потребують кадастрового номера або точки</p></div>
+</div>
+
+<h2>Карта ділянок</h2>
+<div id="map" class="map"></div>
+<p class="hint" style="margin-top:8px">Показано три ділянки з демонстраційного набору. У робочій
+версії шар підвантажується за областю та масштабом.</p>
+
+<h2>Завантаження полігонів</h2>
+<div class="panel">
+  <div class="grid g2">
+    <div>
+      <div class="field"><label>Файл GeoJSON</label><input type="file" accept=".geojson,.json"></div>
+      <div class="field"><label>Зіставлення</label>
+        <select><option>За кадастровим номером у властивостях (рекомендовано)</option>
+        <option>За номером активу</option><option>Вручну для однієї ділянки</option></select></div>
+      <button class="btn">Завантажити та зіставити</button>
+    </div>
+    <div>
+      <div class="note">Файл обробляється так: з кожного об’єкта береться властивість
+      <span class="id">cadnum</span> або <span class="id">koatuu</span>, шукається актив із таким
+      кадастровим номером, полігон зберігається в базі та обчислюється площа й центроїд.
+      Об’єкти без збігу потрапляють у перелік нерозпізнаних із можливістю зіставити вручну.</div>
+      <p class="hint" style="margin-top:10px">Підтримується EPSG:4326. Файли в УСК-2000
+      перепроєктуються автоматично.</p>
+    </div>
+  </div>
+</div>
+
+<h2>Ділянки</h2>
+<div class="wrap-tbl"><table>
+<thead><tr><th>№ активу</th><th>Кадастровий номер</th><th class="num">Площа, га</th>
+<th>Цільове призначення</th><th>Центроїд</th><th>Полігон</th></tr></thead>
+<tbody><tr><td class="id">1122/0602/2021</td><td class="id">3210500000:01:012:0045</td><td class="num">2.4517</td><td>Для розміщення виробництва</td><td class="id">50.5203, 30.2502</td><td><span class="tag t-ok">Полігон завантажено</span></td></tr><tr><td class="id">1145/0602/2021</td><td class="id">3221886000:04:005:0117</td><td class="num">18.73</td><td>Для ведення товарного с/г виробництва</td><td class="id">50.311, 30.964</td><td><span class="tag t-ok">Полігон завантажено</span></td></tr><tr><td class="id">1207/0602/2021</td><td class="id">3223155400:02:009:0301</td><td class="num">0.1</td><td>Для будівництва житлового будинку</td><td class="id">50.7415, 30.238</td><td><span class="tag t-ok">Полігон завантажено</span></td></tr></tbody></table></div>
+
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+const map=L.map('map').setView([50.52,30.45],9);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+ {maxZoom:18,attribution:'© OpenStreetMap'}).addTo(map);
+ARMA.land.forEach(l=>{
+  const d=Math.sqrt(l.area)*0.0035;
+  L.polygon([[l.lat-d,l.lon-d],[l.lat-d,l.lon+d],[l.lat+d,l.lon+d],[l.lat+d,l.lon-d]],
+    {color:'#14618F',weight:2,fillOpacity:.22}).addTo(map)
+   .bindPopup('<b>'+l.id+'</b><br>'+l.cad+'<br>'+l.area+' га<br>'+l.purpose);
+});
+</script>
+</body>
+</html>
