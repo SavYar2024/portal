@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Плани дій за активами — Реєстр активів АРМА</title>
+<link rel="icon" href="../assets/img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/app.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="brand"><img src="../assets/img/logo.png" alt="АРМА">
+      <div><b>Реєстр активів</b><span>АРМА · внутрішня система</span></div></div>
+    <nav>
+      <div class="grp">Аналітика</div>
+      <a href="../index.html">Огляд портфеля</a>
+      <div class="grp">Категорії активів</div>
+      <a href="../realestate.html">Нерухомість</a>
+      <a href="../land.html">Земельні ділянки</a>
+      <a href="../transport.html">Транспорт і техніка</a>
+      <a href="../property.html">Рухоме та інше майно</a>
+      <a href="../corporate.html">Корпоративні права</a>
+      <a href="../money.html">Кошти, метали, ОВДП</a>
+      <a href="../crypto.html">Криптоактиви</a>
+      <div class="grp">Робота з активами</div>
+      <a href="../admin/index.html">Адміністрування</a>
+      <a href="../admin/plans.html" class="on">Плани дій (CRM)</a>
+      <a href="../admin/reports.html">Звіти</a>
+    </nav>
+    <div class="who"><b>Петренко П. П.</b>2 відділ ДМА · менеджер</div>
+  </aside>
+  <main>
+    <div class="topbar">
+      <div><h1>Плани дій за активами</h1><p class="sub">CRM-ланцюг кроків для інвестиційно привабливих активів</p></div>
+      <div class="demo">Демоверсія · дані умовні</div>
+    </div>
+
+<div class="note gold">Плани дій ведуться за активами у статусі «інвестиційно привабливий».
+Кроки виконуються послідовно: перехід до наступного — після підтвердження менеджером відділу ДМА.
+Прострочені кроки підсвічуються і потрапляють до звіту.</div>
+
+<div class="grid g4" style="margin-top:14px">
+  <div class="panel kpi"><h3>Активів під планами</h3><div class="v">17 369</div>
+    <div class="d">інвестиційно привабливі</div></div>
+  <div class="panel kpi"><h3>Планів у роботі</h3><div class="v">4 812</div>
+    <div class="d">крок не завершено</div></div>
+  <div class="panel kpi"><h3>Прострочено</h3><div class="v" style="color:var(--lost)">687</div>
+    <div class="d">строк кроку минув</div></div>
+  <div class="panel kpi"><h3>Завершено планів</h3><div class="v">1 204</div>
+    <div class="d">актив передано або реалізовано</div></div>
+</div>
+
+<h2>Виконання за відділами ДМА</h2>
+<div class="grid g3">
+  <div class="panel"><h3>Кроки за станом <span>усього</span></h3>
+    <div class="chart"><canvas id="s1"></canvas></div></div>
+  <div class="panel"><h3>Прострочені кроки за відділами <span>кроків</span></h3>
+    <div class="chart"><canvas id="s2"></canvas></div></div>
+  <div class="panel"><h3>Активи за етапами <span>активів</span></h3>
+    <div class="chart"><canvas id="s3"></canvas></div></div>
+</div>
+
+<h2>Типовий ланцюг кроків</h2>
+<div class="panel">
+  <div class="grid g2">
+    <div>
+      <h3>Гілка «Передача в управління»</h3>
+      <ul class="steps" style="font-size:13px">
+        <li class="done"><div class="n">1</div><div><div class="t">Первинний аналіз активу</div>
+          <div class="s">строк: 10 робочих днів</div></div><div class="s">ДМА</div>
+          <div><span class="tag t-ok">виконано</span></div><div></div></li>
+        <li class="done"><div class="n">2</div><div><div class="t">Замовлення та отримання оцінки</div>
+          <div class="s">строк: 30 днів</div></div><div class="s">ДМА</div>
+          <div><span class="tag t-ok">виконано</span></div><div></div></li>
+        <li class="now"><div class="n">3</div><div><div class="t">Підготовка плану управління</div>
+          <div class="s">строк: 15 днів</div></div><div class="s">ДМА</div>
+          <div><span class="tag t-lim">у роботі</span></div><div></div></li>
+        <li><div class="n">4</div><div><div class="t">Погодження плану керівником</div>
+          <div class="s">строк: 5 днів</div></div><div class="s">керівник відділу</div>
+          <div><span class="tag t-unk">очікує</span></div><div></div></li>
+        <li><div class="n">5</div><div><div class="t">Оголошення конкурсу</div>
+          <div class="s">строк: 20 днів</div></div><div class="s">Конкурсний відділ</div>
+          <div><span class="tag t-unk">очікує</span></div><div></div></li>
+        <li><div class="n">6</div><div><div class="t">Укладення договору управління</div>
+          <div class="s">строк: 25 днів</div></div><div class="s">ДМА</div>
+          <div><span class="tag t-unk">очікує</span></div><div></div></li>
+        <li><div class="n">7</div><div><div class="t">Передача активу за актом</div>
+          <div class="s">строк: 10 днів</div></div><div class="s">ДМА</div>
+          <div><span class="tag t-unk">очікує</span></div><div></div></li>
+        <li><div class="n">8</div><div><div class="t">Моніторинг виконання договору</div>
+          <div class="s">щокварталу</div></div><div class="s">ДМА</div>
+          <div><span class="tag t-unk">очікує</span></div><div></div></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Гілка «Реалізація»</h3>
+      <ul class="steps" style="font-size:13px">
+        <li class="done"><div class="n">1</div><div><div class="t">Висновок про доцільність реалізації</div>
+          <div class="s">строк: 10 днів</div></div><div class="s">ДМА</div>
+          <div><span class="tag t-ok">виконано</span></div><div></div></li>
+        <li class="now"><div class="n">2</div><div><div class="t">Оцінка та визначення стартової ціни</div>
+          <div class="s">строк: 30 днів</div></div><div class="s">ДМА</div>
+          <div><span class="tag t-lim">у роботі</span></div><div></div></li>
+        <li><div class="n">3</div><div><div class="t">Підготовка лоту Prozorro.Продажі</div>
+          <div class="s">строк: 10 днів</div></div><div class="s">Відділ реалізації</div>
+          <div><span class="tag t-unk">очікує</span></div><div></div></li>
+        <li><div class="n">4</div><div><div class="t">Оголошення та проведення торгів</div>
+          <div class="s">строк: 30 днів</div></div><div class="s">Відділ реалізації</div>
+          <div><span class="tag t-unk">очікує</span></div><div></div></li>
+        <li><div class="n">5</div><div><div class="t">Договір купівлі-продажу</div>
+          <div class="s">строк: 15 днів</div></div><div class="s">Відділ реалізації</div>
+          <div><span class="tag t-unk">очікує</span></div><div></div></li>
+        <li><div class="n">6</div><div><div class="t">Надходження коштів і розміщення</div>
+          <div class="s">строк: 10 днів</div></div><div class="s">Відділ коштів</div>
+          <div><span class="tag t-unk">очікує</span></div><div></div></li>
+      </ul>
+      <div class="note" style="margin-top:12px">Перелік кроків — робоча пропозиція.
+      Потрібен ваш зразок категорій обробки активу, щоб узгодити назви етапів,
+      нормативні строки та відповідальних.</div>
+    </div>
+  </div>
+</div>
+
+<h2>Плани, що потребують уваги</h2>
+<div class="filters">
+  <select><option>Усі відділи ДМА</option><option>2 відділ ДМА</option><option>3 відділ ДМА</option><option>1 відділ ДМА</option><option>Відділ реалізації</option><option>Відділ коштів і металів</option><option>4 відділ ДМА</option><option>Конкурсний відділ</option></select>
+  <select><option>Усі етапи</option><option>Оцінка</option><option>План управління</option>
+    <option>Конкурс</option><option>Договір</option><option>Реалізація</option></select>
+  <select><option>Стан</option><option>У роботі</option><option>Прострочено</option>
+    <option>Очікує підтвердження</option></select>
+  <button class="btn">Застосувати</button><button class="btn gold">Експорт XLSX</button>
+</div>
+<div class="wrap-tbl"><table>
+<thead><tr><th>№ активу</th><th>Актив</th><th>Відділ ДМА</th><th>Поточний крок</th>
+<th>Строк</th><th class="num">Прострочення</th><th>Менеджер</th><th>Стан</th></tr></thead>
+<tbody>
+<tr><td class="id">70/0401/2020</td><td>LAND ROVER RANGE ROVER</td><td>2 відділ ДМА</td>
+<td>Підготовка плану управління</td><td>30.09.2026</td><td class="num">—</td><td>Петренко П. П.</td>
+<td><span class="tag t-lim">у роботі</span></td></tr>
+<tr><td class="id">233/0102/2020</td><td>Свинокомплекс, ЦМК</td><td>1 відділ ДМА</td>
+<td>Оголошення конкурсу</td><td>12.08.2026</td><td class="num">43 дні</td><td>Коваль І. М.</td>
+<td><span class="tag t-lost">прострочено</span></td></tr>
+<tr><td class="id">980/0102/2021</td><td>Нежитлове приміщення, Одеса</td><td>3 відділ ДМА</td>
+<td>Погодження плану керівником</td><td>28.09.2026</td><td class="num">—</td><td>Литвин О. С.</td>
+<td><span class="tag t-unk">очікує підтвердження</span></td></tr>
+</tbody></table></div>
+
+  </main>
+</div>
+<script src="../assets/js/data.js"></script>
+<script>
+Chart.register(ChartDataLabels);
+Chart.defaults.color='#8B9BB6';
+Chart.defaults.font.family='IBM Plex Sans';
+Chart.defaults.font.size=10.5;
+Chart.defaults.plugins.legend.display=false;
+Chart.defaults.plugins.datalabels.color='#E7EDF7';
+Chart.defaults.plugins.datalabels.font={size:10,weight:'600'};
+const GRID={color:'#1E2A42'},NOGRID={display:false};
+const P={cyan:'#35D6E8',gold:'#F5C518',violet:'#8B7BF7',ok:'#3DD68C',lim:'#F5A524',
+         lost:'#F0524E',unk:'#6E7F9E',blue:'#4C8DF6'};
+const fmt=v=>v>=1e6?(v/1e6).toFixed(1)+' млн':v>=1e3?(v/1e3).toFixed(1)+' тис.':v;
+function barH(el,labels,data,color){return new Chart(el,{type:'bar',
+ data:{labels,datasets:[{data,backgroundColor:color||P.cyan,borderRadius:3,barThickness:13}]},
+ options:{indexAxis:'y',maintainAspectRatio:false,layout:{padding:{right:34}},
+  plugins:{datalabels:{anchor:'end',align:'end',formatter:fmt}},
+  scales:{x:{display:false,grid:NOGRID},y:{grid:NOGRID,ticks:{font:{size:10.5}}}}}});}
+function barV(el,labels,data,color){return new Chart(el,{type:'bar',
+ data:{labels,datasets:[{data,backgroundColor:color||P.cyan,borderRadius:3,maxBarThickness:26}]},
+ options:{maintainAspectRatio:false,layout:{padding:{top:18}},
+  plugins:{datalabels:{anchor:'end',align:'top',formatter:fmt}},
+  scales:{x:{grid:NOGRID},y:{display:false,grid:NOGRID}}}});}
+function donut(el,labels,data,colors){return new Chart(el,{type:'doughnut',
+ data:{labels,datasets:[{data,backgroundColor:colors,borderWidth:0}]},
+ options:{maintainAspectRatio:false,cutout:'56%',
+  plugins:{legend:{display:true,position:'right',labels:{boxWidth:9,font:{size:10.5},padding:7}},
+   datalabels:{formatter:(v,c)=>{const t=c.dataset.data.reduce((a,x)=>a+x,0);
+     return (v/t*100)>=6?Math.round(v/t*100)+'%':'';},color:'#0A0F1C',font:{size:10,weight:'700'}}}}});}
+</script><script>
+donut(s1,['Виконано','У роботі','Очікує','Прострочено'],[9840,4812,2030,687],
+ [P.ok,P.lim,P.unk,P.lost]);
+barH(s2,['1 відділ ДМА','2 відділ ДМА','3 відділ ДМА','4 відділ ДМА','Відділ реалізації'],
+ [184,212,146,68,77],P.lost);
+barH(s3,['Первинний аналіз','Оцінка','План управління','Погодження','Конкурс','Договір','Моніторинг'],
+ [3120,4210,2840,1640,2210,1840,1509],P.cyan);
+</script>
+</body>
+</html>

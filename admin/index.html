@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Адміністрування — Реєстр активів АРМА</title>
+<link rel="icon" href="../assets/img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/app.css">
+
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="brand"><img src="../assets/img/logo.png" alt="АРМА">
+      <div><b>Реєстр активів</b><span>АРМА · внутрішня система</span></div></div>
+    <nav>
+      <div class="grp">Аналітика</div>
+      <a href="../index.html">Огляд портфеля</a>
+      <div class="grp">Категорії активів</div>
+      <a href="../realestate.html">Нерухомість</a>
+      <a href="../land.html">Земельні ділянки</a>
+      <a href="../transport.html">Транспорт і техніка</a>
+      <a href="../property.html">Рухоме та інше майно</a>
+      <a href="../corporate.html">Корпоративні права</a>
+      <a href="../money.html">Кошти, метали, ОВДП</a>
+      <a href="../crypto.html">Криптоактиви</a>
+      <div class="grp">Робота з активами</div>
+      <a href="../admin/index.html" class="on">Адміністрування</a>
+      <a href="../admin/plans.html">Плани дій (CRM)</a>
+      <a href="../admin/reports.html">Звіти</a>
+    </nav>
+    <div class="who"><b>Петренко П. П.</b>2 відділ ДМА · менеджер</div>
+  </aside>
+  <main>
+    <div class="topbar">
+      <div><h1>Адміністрування</h1><p class="sub">Оновлення даних, файли, права доступу</p></div>
+      <div class="demo">Демоверсія · дані умовні</div>
+    </div>
+
+<div class="note gold">Розділ призначений для оновлення даних. Аналітика і публічні представлення —
+в розділах категорій. Тут — списки з фільтрами, масові дії та форми редагування.</div>
+
+<div class="grid g4" style="margin-top:14px">
+  <div class="panel kpi"><h3>Потребують заповнення</h3><div class="v">38 042</div>
+    <div class="d">менше 60 % обов’язкових полів</div></div>
+  <div class="panel kpi"><h3>Без підрозділу</h3><div class="v" style="color:var(--lim)">2 611</div>
+    <div class="d">закріпити за МТУ або відділом</div></div>
+  <div class="panel kpi"><h3>Без фото</h3><div class="v">37 892</div>
+    <div class="d">фотофіксацію не проведено</div></div>
+  <div class="panel kpi"><h3>Змін за тиждень</h3><div class="v">1 284</div>
+    <div class="d">журнал змін доступний адміністратору</div></div>
+</div>
+
+<h2>Робочий список активів</h2>
+<div class="filters">
+  <input placeholder="Номер, назва, ЄДРПОУ, VIN, кадастровий номер" style="min-width:300px">
+  <select><option>Усі категорії</option><option>Транспорт і техніка</option><option>Корпоративні права</option><option>Рухоме та інше майно</option><option>Земельні ділянки</option><option>Нерухомість</option><option>Кошти, метали, ОВДП</option><option>Криптоактиви</option></select>
+  <select><option>Усі МТУ</option><option>Центральне МТУ</option><option>Північно-східне МТУ</option><option>Західне МТУ</option><option>Південно-східне МТУ</option><option>Південне МТУ</option><option>Центрально-західне ТУ</option></select>
+  <select><option>Усі відділи ДМА</option><option>2 відділ ДМА</option><option>3 відділ ДМА</option><option>1 відділ ДМА</option><option>Відділ реалізації</option><option>Відділ коштів і металів</option><option>4 відділ ДМА</option><option>Конкурсний відділ</option></select>
+  <select><option>Стан заповнення</option><option>Не заповнено</option>
+    <option>Потребує доопрацювання</option><option>Дані повні</option></select>
+  <select><option>Без фото</option><option>Без документів</option><option>Без координат</option>
+    <option>Без оцінки</option><option>Без підрозділу</option></select>
+  <button class="btn">Застосувати</button>
+  <button class="btn gold">Масове призначення підрозділу</button>
+</div>
+<div class="wrap-tbl"><table>
+<thead><tr><th style="width:26px"><input type="checkbox" style="width:auto"></th><th>№ активу</th>
+<th>Найменування</th><th>Категорія</th><th>Підрозділ</th><th class="num">Заповнено</th>
+<th>Фото</th><th>Док.</th><th></th></tr></thead>
+<tbody>
+<tr><td><input type="checkbox" style="width:auto"></td><td class="id">70/0401/2020</td>
+<td>LAND ROVER RANGE ROVER</td><td>Транспорт</td><td>2 відділ ДМА</td><td class="num">100 %</td>
+<td>9</td><td>5</td><td><a href="#">редагувати</a></td></tr>
+<tr><td><input type="checkbox" style="width:auto"></td><td class="id">7781/0201/2024</td>
+<td>Трактор John Deere 8400R</td><td>Транспорт</td>
+<td><span class="tag t-lim">не розподілено</span></td><td class="num">34 %</td><td>7</td><td>1</td>
+<td><a href="#">редагувати</a></td></tr>
+<tr><td><input type="checkbox" style="width:auto"></td><td class="id">8120/0701/2023</td>
+<td>Партія побутової техніки</td><td>Інше майно</td><td>3 відділ ДМА</td><td class="num">62 %</td>
+<td><span class="tag t-gold">спільні</span></td><td>2</td><td><a href="#">редагувати</a></td></tr>
+</tbody></table></div>
+
+<h2>Редагування картки <span class="id" style="font-weight:400">70/0401/2020</span></h2>
+<div class="grid g2">
+  <div class="panel">
+    <h3>Основні дані</h3>
+    <div class="grid g2" style="gap:0 14px">
+      <div class="field"><label>Категорія активу</label><select><option>Транспорт і техніка</option><option>Корпоративні права</option><option>Рухоме та інше майно</option><option>Земельні ділянки</option><option>Нерухомість</option><option>Кошти, метали, ОВДП</option><option>Криптоактиви</option></select></div>
+      <div class="field"><label>Вид активу</label><input value="Автомобільний транспорт"></div>
+      <div class="field"><label>Відповідальне МТУ</label>
+        <select><option>— не застосовується —</option><option>Центральне МТУ</option><option>Північно-східне МТУ</option><option>Західне МТУ</option><option>Південно-східне МТУ</option><option>Південне МТУ</option><option>Центрально-західне ТУ</option></select></div>
+      <div class="field"><label>Відділ ДМА</label><select><option>2 відділ ДМА</option><option>3 відділ ДМА</option><option>1 відділ ДМА</option><option>Відділ реалізації</option><option>Відділ коштів і металів</option><option>4 відділ ДМА</option><option>Конкурсний відділ</option></select></div>
+      <div class="field"><label>Власник</label><input value="ТОВ «АЛЬФА-ТРЕЙД»"></div>
+      <div class="field"><label>ЄДРПОУ / РНОКПП</label><input value="12345678"></div>
+    </div>
+
+    <h3 style="margin-top:8px">Адреса (уніфіковане введення)</h3>
+    <div class="grid g3" style="gap:0 12px">
+      <div class="field"><label>Область</label><select><option>Вінницька</option><option>Волинська</option><option>Дніпропетровська</option><option>Донецька</option><option>Житомирська</option><option>Закарпатська</option><option>Запорізька</option><option>Івано-Франківська</option><option>Київська</option><option>м. Київ</option><option>Кіровоградська</option><option>Луганська</option><option>Львівська</option><option>Миколаївська</option><option>Одеська</option><option>Полтавська</option><option>Рівненська</option><option>Сумська</option><option>Тернопільська</option><option>Харківська</option><option>Херсонська</option><option>Хмельницька</option><option>Черкаська</option><option>Чернівецька</option><option>Чернігівська</option><option>АР Крим</option><option>м. Севастополь</option></select></div>
+      <div class="field"><label>Район</label><input value="Бучанський"></div>
+      <div class="field"><label>Громада</label><input value="Ірпінська міська"></div>
+      <div class="field"><label>Тип НП</label><select><option>м.</option><option>смт</option><option>с.</option><option>селище</option><option>за межами населеного пункту</option></select></div>
+      <div class="field"><label>Населений пункт</label><input value="Ірпінь"></div>
+      <div class="field"><label>Індекс</label><input value="08200"></div>
+      <div class="field"><label>Тип вулиці</label><select><option>вул.</option><option>просп.</option><option>бульв.</option><option>пров.</option><option>пл.</option><option>майдан</option><option>шосе</option><option>узвіз</option><option>наб.</option><option>проїзд</option><option>мкрн</option></select></div>
+      <div class="field"><label>Назва вулиці</label><input value="Соборна"></div>
+      <div class="field"><label>Будинок / корпус / прим.</label><input value="5 / А / 3"></div>
+    </div>
+
+    <h3 style="margin-top:8px">Зберігання</h3>
+    <div class="grid g2" style="gap:0 14px">
+      <div class="field"><label>Зберігач</label><input value="ТОВ «АВТОСТОЯНКА ПЛЮС»"></div>
+      <div class="field"><label>ЄДРПОУ зберігача</label><input value="11223344"></div>
+      <div class="field"><label>Договір зберігання</label><input value="12/З від 01.03.2019"></div>
+      <div class="field"><label>Вартість зберігання, ₴/міс.</label><input value="4200"></div>
+      <div class="field"><label>Строк дії договору</label><input value="до 01.03.2027"></div>
+      <div class="field"><label>Місце зберігання</label><input value="майданчик № 3"></div>
+    </div>
+    <button class="btn gold">Зберегти</button>
+    <button class="btn">Історія змін</button>
+  </div>
+
+  <div>
+    <div class="panel"><h3>Судове рішення</h3>
+      <div class="grid g2" style="gap:0 14px">
+        <div class="field"><label>Тип рішення</label><select>
+          <option>Ухвала про накладення арешту</option>
+          <option>Ухвала про передачу в управління АРМА</option>
+          <option>Ухвала про скасування арешту (повністю)</option>
+          <option>Ухвала про скасування арешту (частково)</option>
+          <option>Рішення суду про конфіскацію</option></select></div>
+        <div class="field"><label>Обсяг арешту</label><select>
+          <option>Заборона користування та розпорядження</option>
+          <option>Заборона розпорядження (без заборони користування)</option></select></div>
+        <div class="field"><label>Дата ухвалення</label><input value="05.06.2026"></div>
+        <div class="field"><label>Надходження до АРМА</label><input value="18.06.2026"></div>
+      </div>
+      <div class="note">Одне рішення прив’язується до кількох активів. Правовий стан
+      перераховується автоматично.</div>
+      <div style="margin-top:10px"><button class="btn">Зберегти рішення</button></div>
+    </div>
+
+    <div class="panel" style="margin-top:14px"><h3>Файли</h3>
+      <div class="field"><label>Фотографії (до 10 МБ на файл)</label>
+        <input type="file" multiple accept="image/*"></div>
+      <div class="field"><label>Документ</label><select>
+        <option>Технічний паспорт</option><option>Звіт про оцінку</option>
+        <option>Орієнтовний план управління</option><option>Акт огляду</option>
+        <option>Договір зберігання</option><option>Договір управління</option></select></div>
+      <div class="field"><input type="file" accept=".pdf,.doc,.docx,.xls,.xlsx"></div>
+      <div class="note gold">Комплект уже завантажено для іншого активу? Вкажіть його номер —
+      файли підключаться посиланням, без дублювання на диску.</div>
+      <div class="field" style="margin-top:10px"><label>Підключити комплект активу</label>
+        <input placeholder="Наприклад 8120/0701/2023"></div>
+      <div class="wrap-tbl"><table><thead><tr><th>№ активу</th><th>Комплект</th>
+        <th class="num">Файлів</th><th></th></tr></thead><tbody>
+        <tr><td class="id">8120/0701/2023</td><td>Партія побутової техніки</td><td class="num">7</td>
+          <td><a href="#">підключити</a></td></tr>
+        <tr><td class="id">8121/0701/2023</td><td>Партія побутової техніки</td><td class="num">7</td>
+          <td><a href="#">підключити</a></td></tr></tbody></table></div>
+    </div>
+  </div>
+</div>
+
+<h2>Користувачі та права</h2>
+<div class="wrap-tbl"><table>
+<thead><tr><th>Роль</th><th>Хто</th><th>Перегляд</th><th>Редагування</th><th>Особливе</th></tr></thead>
+<tbody>
+<tr><td>Виконавець МТУ</td><td>6 управлінь</td><td>активи свого МТУ</td><td>свої активи</td>
+<td>корправа — лише перегляд</td></tr>
+<tr><td>Менеджер відділу ДМА</td><td>4 відділи</td><td>активи свого відділу</td>
+<td>свої активи, плани дій</td><td>підтверджує кроки плану</td></tr>
+<tr><td>Відділ коштів і металів</td><td>1 відділ</td><td>усі фінансові активи</td>
+<td>кошти, метали, крипта</td><td>—</td></tr>
+<tr><td>Відділ реалізації</td><td>1 відділ</td><td>усі активи</td><td>блок реалізації</td><td>—</td></tr>
+<tr><td>Реєстратор судових рішень</td><td>централізовано</td><td>усі</td><td>журнал рішень</td>
+<td>єдиний вносить ухвали</td></tr>
+<tr><td>Керівництво</td><td>за списком</td><td>усі дані та звіти</td><td>немає</td>
+<td>додаткові поля корправ</td></tr>
+<tr><td>Адміністратор</td><td>1–2 особи</td><td>усе</td><td>усе, довідники, ролі</td>
+<td>оновлення з YouControl</td></tr>
+</tbody></table></div>
+
+  </main>
+</div>
+<script src="../assets/js/data.js"></script>
+
+</body>
+</html>

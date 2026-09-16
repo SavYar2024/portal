@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Звіти — Реєстр активів АРМА</title>
+<link rel="icon" href="../assets/img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/app.css">
+
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="brand"><img src="../assets/img/logo.png" alt="АРМА">
+      <div><b>Реєстр активів</b><span>АРМА · внутрішня система</span></div></div>
+    <nav>
+      <div class="grp">Аналітика</div>
+      <a href="../index.html">Огляд портфеля</a>
+      <div class="grp">Категорії активів</div>
+      <a href="../realestate.html">Нерухомість</a>
+      <a href="../land.html">Земельні ділянки</a>
+      <a href="../transport.html">Транспорт і техніка</a>
+      <a href="../property.html">Рухоме та інше майно</a>
+      <a href="../corporate.html">Корпоративні права</a>
+      <a href="../money.html">Кошти, метали, ОВДП</a>
+      <a href="../crypto.html">Криптоактиви</a>
+      <div class="grp">Робота з активами</div>
+      <a href="../admin/index.html">Адміністрування</a>
+      <a href="../admin/plans.html">Плани дій (CRM)</a>
+      <a href="../admin/reports.html" class="on">Звіти</a>
+    </nav>
+    <div class="who"><b>Петренко П. П.</b>2 відділ ДМА · менеджер</div>
+  </aside>
+  <main>
+    <div class="topbar">
+      <div><h1>Звіти</h1><p class="sub">Вивантаження XLSX і показники для керівництва</p></div>
+      <div class="demo">Демоверсія · дані умовні</div>
+    </div>
+
+<div class="grid g2">
+  <div class="panel"><h3>Сформувати звіт</h3>
+    <div class="field"><label>Тип звіту</label><select>
+      <option>Повне вивантаження реєстру активів</option>
+      <option>Виконання планів дій у розрізі відділів ДМА</option>
+      <option>Активи, за якими втрачено право на управління</option>
+      <option>Активи, передані без заборони користування</option>
+      <option>Хронологія судових рішень за період</option>
+      <option>Активи без підрозділу</option>
+      <option>Активи без оцінки / фото / координат</option>
+      <option>Кошти, метали, ОВДП</option>
+      <option>Корпоративні права у розрізі компаній</option>
+      <option>Земельні ділянки з кадастровими номерами</option>
+    </select></div>
+    <div class="grid g2" style="gap:0 14px">
+      <div class="field"><label>Період з</label><input value="01.01.2026"></div>
+      <div class="field"><label>по</label><input value="24.08.2026"></div>
+    </div>
+    <div class="grid g2" style="gap:0 14px">
+      <div class="field"><label>МТУ</label><select><option>Усі</option><option>Центральне МТУ</option><option>Північно-східне МТУ</option><option>Західне МТУ</option><option>Південно-східне МТУ</option><option>Південне МТУ</option><option>Центрально-західне ТУ</option></select></div>
+      <div class="field"><label>Відділ ДМА</label><select><option>Усі</option><option>2 відділ ДМА</option><option>3 відділ ДМА</option><option>1 відділ ДМА</option><option>Відділ реалізації</option><option>Відділ коштів і металів</option><option>4 відділ ДМА</option><option>Конкурсний відділ</option></select></div>
+    </div>
+    <button class="btn gold">Сформувати XLSX</button>
+  </div>
+  <div class="panel"><h3>Останні вивантаження</h3>
+    <ul class="docs">
+      <li><span>Повний реєстр · 24.08.2026</span><a href="#">XLSX · 41 МБ</a></li>
+      <li><span>Виконання планів ДМА · 22.08.2026</span><a href="#">XLSX · 1,2 МБ</a></li>
+      <li><span>Втрачене право управління · 20.08.2026</span><a href="#">XLSX · 2,4 МБ</a></li>
+      <li><span>Активи без підрозділу · 18.08.2026</span><a href="#">XLSX · 340 КБ</a></li>
+    </ul>
+    <div class="note" style="margin-top:14px">Великі вивантаження формуються у фоні. Кожне
+    вивантаження журналюється: хто, коли, який обсяг отримав.</div>
+  </div>
+</div>
+
+<h2>Виконання планів дій у розрізі відділів ДМА</h2>
+<div class="wrap-tbl"><table>
+<thead><tr><th>Відділ</th><th class="num">Активів під планами</th><th class="num">Кроків виконано</th>
+<th class="num">У роботі</th><th class="num">Прострочено</th><th class="num">Планів завершено</th>
+<th class="num">Середнє прострочення, днів</th></tr></thead>
+<tbody>
+<tr><td>1 відділ ДМА</td><td class="num">4 210</td><td class="num">2 840</td><td class="num">1 184</td>
+<td class="num">184</td><td class="num">312</td><td class="num">18</td></tr>
+<tr><td>2 відділ ДМА</td><td class="num">6 480</td><td class="num">3 920</td><td class="num">1 640</td>
+<td class="num">212</td><td class="num">486</td><td class="num">24</td></tr>
+<tr><td>3 відділ ДМА</td><td class="num">3 860</td><td class="num">2 110</td><td class="num">1 042</td>
+<td class="num">146</td><td class="num">248</td><td class="num">12</td></tr>
+<tr><td>4 відділ ДМА</td><td class="num">1 240</td><td class="num">684</td><td class="num">412</td>
+<td class="num">68</td><td class="num">96</td><td class="num">9</td></tr>
+<tr><td>Відділ реалізації</td><td class="num">1 579</td><td class="num">286</td><td class="num">534</td>
+<td class="num">77</td><td class="num">62</td><td class="num">31</td></tr>
+</tbody></table></div>
+
+<h2>Показники для доповідної</h2>
+<div class="wrap-tbl"><table>
+<thead><tr><th>Показник</th><th class="num">Значення</th><th>Джерело</th></tr></thead>
+<tbody>
+<tr><td>Активів в обліку</td><td class="num">60 530</td><td>реєстр</td></tr>
+<tr><td>Закріплено за МТУ</td><td class="num">10 964</td><td>розподіл за юрисдикцією</td></tr>
+<tr><td>Закріплено за відділами ДМА</td><td class="num">46 955</td><td>правила за категоріями</td></tr>
+<tr><td>Не розподілено</td><td class="num">2 611</td><td>потребують рішення</td></tr>
+<tr><td>Інвестиційно привабливі</td><td class="num">17 369</td><td>скринінг</td></tr>
+<tr><td>Право на управління втрачено</td><td class="num">18 235</td><td>журнал судових рішень</td></tr>
+<tr><td>Оцінена вартість портфеля</td><td class="num">915 610 488 ₴</td><td>чинні звіти</td></tr>
+</tbody></table></div>
+
+  </main>
+</div>
+<script src="../assets/js/data.js"></script>
+
+</body>
+</html>
