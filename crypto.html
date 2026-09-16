@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Криптоактиви — Реєстр активів АРМА</title>
+<link rel="icon" href="assets/img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="brand"><img src="assets/img/logo.png" alt="АРМА">
+      <div><b>Реєстр активів</b><span>АРМА · внутрішня система</span></div></div>
+    <nav>
+      <div class="grp">Аналітика</div>
+      <a href="index.html">Огляд портфеля</a>
+      <div class="grp">Категорії активів</div>
+      <a href="realestate.html">Нерухомість</a>
+      <a href="land.html">Земельні ділянки</a>
+      <a href="transport.html">Транспорт і техніка</a>
+      <a href="property.html">Рухоме та інше майно</a>
+      <a href="corporate.html">Корпоративні права</a>
+      <a href="money.html">Кошти, метали, ОВДП</a>
+      <a href="crypto.html" class="on">Криптоактиви</a>
+      <div class="grp">Робота з активами</div>
+      <a href="admin/index.html">Адміністрування</a>
+      <a href="admin/plans.html">Плани дій (CRM)</a>
+      <a href="admin/reports.html">Звіти</a>
+    </nav>
+    <div class="who"><b>Петренко П. П.</b>2 відділ ДМА · менеджер</div>
+  </aside>
+  <main>
+    <div class="topbar">
+      <div><h1>Криптоактиви</h1><p class="sub">Портфель віртуальних активів у розрізі чотирьох складових</p></div>
+      <div class="demo">Демоверсія · дані умовні</div>
+    </div>
+<div class="grid g4"><div class="panel kpi"><h3>Вартість портфеля</h3><div class="v">486 <small>млн ₴</small></div><div class="d">≈ 12 млн $ · курс оновлюється</div></div><div class="panel kpi"><h3>Кейсів</h3><div class="v">134</div><div class="d">арештовані криптоактиви</div></div><div class="panel kpi"><h3>Стейблкоїни</h3><div class="v">44 %</div><div class="d">низький ризик волатильності</div></div><div class="panel kpi"><h3>На реалізації</h3><div class="v">39</div><div class="d">через Prozorro.Продажі або кастодіана</div></div></div>
+<div class="note gold" style="margin-top:14px">Склад сторінки сформовано за службовою запискою
+Управління виявлення та розшуку цифрових активів (вх. № 150/40-26 від 01.09.2026):
+чотири складові — загальний огляд, профіль активу, юридично-процесуальний статус, ончейн-верифікація.
+Чутливі дані (закриті ключі, конкретні адреси гаманців) на публічній частині не відображаються.</div>
+
+<h2>Складова 1 — загальний огляд</h2><div class="grid g3"><div class="panel"><h3>За типами активів <span>млн ₴</span></h3><div class="chart"><canvas id="y1"></canvas></div></div><div class="panel"><h3>Спосіб зберігання <span>кейсів</span></h3><div class="chart"><canvas id="y2"></canvas></div></div><div class="panel"><h3>Розподіл за мережами <span>кейсів</span></h3><div class="chart"><canvas id="y3"></canvas></div></div></div>
+<div class="grid g2" style="margin-top:14px">
+  <div class="panel"><h3>Статус активів <span>за даними реєстру</span></h3>
+    <div class="chart"><canvas id="y4"></canvas></div></div>
+  <div class="panel"><h3>Перемикання валюти <span>CoinGecko / CoinMarketCap</span></h3>
+    <p class="hint" style="margin-top:0">Вартість показується у гривні та доларі з перерахунком
+    за курсом у реальному часі. Для волатильних активів (BTC, ETH, SOL) додатково відображається
+    зміна вартості з моменту арешту.</p>
+    <dl class="kv" style="grid-template-columns:200px 1fr;margin-top:10px">
+      <dt>Вартість на момент арешту</dt><dd>512,8 млн ₴</dd>
+      <dt>Поточна ринкова вартість</dt><dd>486,3 млн ₴ <span class="tag t-lost">−5,2 %</span></dd>
+      <dt>Стейблкоїни (фіксована)</dt><dd>214,0 млн ₴</dd>
+      <dt>Волатильні (потребують хеджування)</dt><dd>239,6 млн ₴</dd>
+      <dt>Низьколіквідні та NFT</dt><dd>32,7 млн ₴</dd>
+    </dl>
+  </div>
+</div>
+
+<h2>Складова 2 — профіль криптоактиву</h2>
+<div class="wrap-tbl"><table>
+<thead><tr><th>Кейс</th><th>Тип активу</th><th>Мережа</th><th>Спосіб зберігання</th>
+<th class="num">На момент арешту, ₴</th><th class="num">Поточна, ₴</th><th>Статус</th></tr></thead>
+<tbody>
+<tr><td class="id">CR-0012/2025</td><td>USDT</td><td>TRON</td><td>Кастодіальний гаманець АРМА (холодний)</td>
+<td class="num">84 200 000</td><td class="num">84 640 000</td>
+<td><span class="tag t-gold">підготовка до реалізації</span></td></tr>
+<tr><td class="id">CR-0018/2025</td><td>BTC</td><td>Bitcoin</td><td>Акаунт на CEX під арештом</td>
+<td class="num">126 400 000</td><td class="num">112 800 000</td>
+<td><span class="tag t-ok">передано в управління</span></td></tr>
+<tr><td class="id">CR-0031/2026</td><td>ETH</td><td>Ethereum</td><td>Заблокований смарт-контракт</td>
+<td class="num">48 900 000</td><td class="num">51 200 000</td>
+<td><span class="tag t-unk">арештовано в межах КП</span></td></tr>
+</tbody></table></div>
+<p class="hint" style="margin-top:8px">Адреси гаманців і закриті ключі в картці не відображаються —
+лише тип мережі та спосіб зберігання.</p>
+
+<h2>Складова 3 — юридично-процесуальний статус</h2>
+<div class="grid g2">
+  <div class="panel"><h3>Підстави передачі <span>без розкриття таємниці слідства</span></h3>
+    <dl class="kv" style="grid-template-columns:210px 1fr">
+      <dt>Ухвала суду</dt><dd>відображається лише ID рішення в ЄДРСР</dd>
+      <dt>Кримінальне провадження</dt><dd>факт наявності, без номера</dd>
+      <dt>Спосіб управління</dt><dd>реалізація через Prozorro.Продажі або кастодіальну установу</dd>
+      <dt>Кейсів на реалізації</dt><dd>39</dd>
+    </dl></div>
+  <div class="panel"><h3>Складова 4 — ончейн-верифікація <span>Proof-of-Reserves</span></h3>
+    <p class="hint" style="margin-top:0">Публічні адреси АРМА (мультипідписні гаманці) доступні для
+    перевірки балансу спільнотою через блокчейн-експлорери.</p>
+    <ul class="docs" style="margin-top:8px">
+      <li><span>Bitcoin — публічна адреса резервів</span><a href="#">перевірити в експлорері</a></li>
+      <li><span>Ethereum — мультипідписний гаманець</span><a href="#">Etherscan</a></li>
+      <li><span>TRON — адреса надходжень</span><a href="#">Tronscan</a></li>
+      <li><span>Виведення на рахунки АРМА після реалізації</span><a href="#">історія транзакцій</a></li>
+    </ul></div>
+</div>
+
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script>
+Chart.register(ChartDataLabels);
+Chart.defaults.color='#8B9BB6';
+Chart.defaults.font.family='IBM Plex Sans';
+Chart.defaults.font.size=10.5;
+Chart.defaults.plugins.legend.display=false;
+Chart.defaults.plugins.datalabels.color='#E7EDF7';
+Chart.defaults.plugins.datalabels.font={size:10,weight:'600'};
+const GRID={color:'#1E2A42'},NOGRID={display:false};
+const P={cyan:'#35D6E8',gold:'#F5C518',violet:'#8B7BF7',ok:'#3DD68C',lim:'#F5A524',
+         lost:'#F0524E',unk:'#6E7F9E',blue:'#4C8DF6'};
+const fmt=v=>v>=1e6?(v/1e6).toFixed(1)+' млн':v>=1e3?(v/1e3).toFixed(1)+' тис.':v;
+function barH(el,labels,data,color){return new Chart(el,{type:'bar',
+ data:{labels,datasets:[{data,backgroundColor:color||P.cyan,borderRadius:3,barThickness:13}]},
+ options:{indexAxis:'y',maintainAspectRatio:false,layout:{padding:{right:34}},
+  plugins:{datalabels:{anchor:'end',align:'end',formatter:fmt}},
+  scales:{x:{display:false,grid:NOGRID},y:{grid:NOGRID,ticks:{font:{size:10.5}}}}}});}
+function barV(el,labels,data,color){return new Chart(el,{type:'bar',
+ data:{labels,datasets:[{data,backgroundColor:color||P.cyan,borderRadius:3,maxBarThickness:26}]},
+ options:{maintainAspectRatio:false,layout:{padding:{top:18}},
+  plugins:{datalabels:{anchor:'end',align:'top',formatter:fmt}},
+  scales:{x:{grid:NOGRID},y:{display:false,grid:NOGRID}}}});}
+function donut(el,labels,data,colors){return new Chart(el,{type:'doughnut',
+ data:{labels,datasets:[{data,backgroundColor:colors,borderWidth:0}]},
+ options:{maintainAspectRatio:false,cutout:'56%',
+  plugins:{legend:{display:true,position:'right',labels:{boxWidth:9,font:{size:10.5},padding:7}},
+   datalabels:{formatter:(v,c)=>{const t=c.dataset.data.reduce((a,x)=>a+x,0);
+     return (v/t*100)>=6?Math.round(v/t*100)+'%':'';},color:'#0A0F1C',font:{size:10,weight:'700'}}}}});}
+</script><script>
+barH(y1,["Стейблкоїни USDT/USDC", "BTC", "ETH", "Альткоїни низьколіквідні", "NFT та інші"],[214.0, 168.4, 71.2, 28.9, 3.8],P.gold);
+donut(y2,["Кастодіальні гаманці АРМА", "Акаунти на CEX під арештом", "Заблоковані DeFi / смарт-контракти"],[62, 48, 24],[P.cyan,P.violet,P.unk]);
+barH(y3,["Bitcoin", "Ethereum", "TRON", "Solana", "Інші"],[41, 38, 33, 14, 8],P.cyan);
+donut(y4,["Підготовка до реалізації", "Передано в управління", "Арештовано в межах КП"],[39, 52, 43],[P.gold,P.ok,P.unk]);
+</script>
+</body>
+</html>

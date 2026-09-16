@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Корпоративні права — Реєстр активів АРМА</title>
+<link rel="icon" href="assets/img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="brand"><img src="assets/img/logo.png" alt="АРМА">
+      <div><b>Реєстр активів</b><span>АРМА · внутрішня система</span></div></div>
+    <nav>
+      <div class="grp">Аналітика</div>
+      <a href="index.html">Огляд портфеля</a>
+      <div class="grp">Категорії активів</div>
+      <a href="realestate.html">Нерухомість</a>
+      <a href="land.html">Земельні ділянки</a>
+      <a href="transport.html">Транспорт і техніка</a>
+      <a href="property.html">Рухоме та інше майно</a>
+      <a href="corporate.html" class="on">Корпоративні права</a>
+      <a href="money.html">Кошти, метали, ОВДП</a>
+      <a href="crypto.html">Криптоактиви</a>
+      <div class="grp">Робота з активами</div>
+      <a href="admin/index.html">Адміністрування</a>
+      <a href="admin/plans.html">Плани дій (CRM)</a>
+      <a href="admin/reports.html">Звіти</a>
+    </nav>
+    <div class="who"><b>Петренко П. П.</b>2 відділ ДМА · менеджер</div>
+  </aside>
+  <main>
+    <div class="topbar">
+      <div><h1>Корпоративні права</h1><p class="sub">5 903 записи · 1 847 компаній у пулі</p></div>
+      <div class="demo">Демоверсія · дані умовні</div>
+    </div>
+<div class="grid g4"><div class="panel kpi"><h3>Записів корправ</h3><div class="v">5 903</div><div class="d">акції та частки</div></div><div class="panel kpi"><h3>Унікальних компаній</h3><div class="v">1 847</div><div class="d">пул формується за ЄДРПОУ</div></div><div class="panel kpi"><h3>Статутний капітал</h3><div class="v">4,12 <small>млрд ₴</small></div><div class="d">сукупно за пулом</div></div><div class="panel kpi"><h3>Не визначено відділ</h3><div class="v">4 746</div><div class="d">потребують закріплення</div></div></div><h2>Аналітика за портфелем</h2><div class="grid g3"><div class="panel"><h3>За розміром частки <span>компаній</span></h3><div class="chart"><canvas id="k1"></canvas></div></div><div class="panel"><h3>Стан юридичних осіб <span>частка</span></h3><div class="chart"><canvas id="k2"></canvas></div></div><div class="panel"><h3>За галузями (КВЕД) <span>компаній</span></h3><div class="chart"><canvas id="k3"></canvas></div></div></div>
+<div class="grid g2" style="margin-top:14px">
+  <div class="panel"><h3>Ознаки ризику за пулом <span>дані YouControl</span></h3>
+    <div class="chart"><canvas id="k4"></canvas></div></div>
+  <div class="panel"><h3>Сукупний дохід компаній пулу <span>млн ₴ за роками</span></h3>
+    <div class="chart"><canvas id="k5"></canvas></div></div>
+</div>
+
+<h2>Пул компаній</h2>
+<p class="hint" style="margin:-4px 0 10px">Записи корпоративних прав згруповано за кодом ЄДРПОУ:
+один рядок — одна компанія, у якій АРМА має частку. Усередині картки — усі записи активів цієї компанії.</p>
+<div class="filters">
+  <input placeholder="Пошук: номер, назва, ЄДРПОУ, адреса" style="min-width:290px">
+  <select><option>Усі області</option><option>Вінницька</option><option>Волинська</option><option>Дніпропетровська</option><option>Донецька</option><option>Житомирська</option><option>Закарпатська</option><option>Запорізька</option><option>Івано-Франківська</option><option>Київська</option><option>м. Київ</option><option>Кіровоградська</option><option>Луганська</option><option>Львівська</option><option>Миколаївська</option><option>Одеська</option><option>Полтавська</option><option>Рівненська</option><option>Сумська</option><option>Тернопільська</option><option>Харківська</option><option>Херсонська</option><option>Хмельницька</option><option>Черкаська</option><option>Чернівецька</option><option>Чернігівська</option><option>АР Крим</option><option>м. Севастополь</option></select>
+  <select><option>Усі МТУ</option><option>Центральне МТУ</option><option>Північно-східне МТУ</option><option>Західне МТУ</option><option>Південно-східне МТУ</option><option>Південне МТУ</option><option>Центрально-західне ТУ</option></select>
+  <select><option>Усі відділи ДМА</option><option>2 відділ ДМА</option><option>3 відділ ДМА</option><option>1 відділ ДМА</option><option>Відділ реалізації</option><option>Відділ коштів і металів</option><option>4 відділ ДМА</option><option>Конкурсний відділ</option></select>
+  <select><option>Правовий стан</option><option>Повний обсяг</option><option>Обмежене</option>
+    <option>Право втрачено</option><option>Уточнюється</option></select>
+  
+  <button class="btn">Знайти</button><button class="btn gold">Експорт XLSX</button>
+</div><div class="wrap-tbl"><table><thead><tr><th>ЄДРПОУ</th><th>Компанія</th><th class="num">Записів активів</th><th class="num">Частка АРМА</th><th class="num">Статутний капітал, ₴</th><th>Стан</th><th>Відділ ДМА</th><th>Правовий стан</th></tr></thead><tbody><tr><td><a class="id" href="company.html">41027144</a></td><td>ТОВ «ВОЛИЦЯ-АГРО»</td><td class="num">3</td><td class="num">100,0 %</td><td class="num">25 400 000</td><td>Зареєстровано</td><td>1 відділ ДМА</td><td><span class="tag t-lim">Обмежене</span></td></tr><tr><td><a class="id" href="company.html">39887215</a></td><td>ТОВ «ПІВДЕНЬ-ЛОГІСТИК»</td><td class="num">1</td><td class="num">75,0 %</td><td class="num">12 000 000</td><td>Зареєстровано</td><td>3 відділ ДМА</td><td><span class="tag t-ok">Повний обсяг</span></td></tr><tr><td><a class="id" href="company.html">00293841</a></td><td>ПрАТ «КАРПАТИ-ЦЕМЕНТ»</td><td class="num">128</td><td class="num">24,9 %</td><td class="num">148 500 000</td><td>Припиняється</td><td>2 відділ ДМА</td><td><span class="tag t-lost">Право втрачено</span></td></tr><tr><td><a class="id" href="company.html">32118904</a></td><td>ТОВ «АГРО-ІНВЕСТ ГРУП»</td><td class="num">12</td><td class="num">51,0 %</td><td class="num">64 200 000</td><td>Зареєстровано</td><td>не визначено</td><td><span class="tag t-unk">Уточнюється</span></td></tr></tbody></table></div>
+<div class="note gold" style="margin-top:12px">Додаткові поля картки компанії (фінанси, бенефіціари,
+судові справи, санкції, пов’язані особи) наповнюються з YouControl. Право редагування —
+у відділів ДМА, керівництва та адміністратора. Виконавці МТУ мають доступ лише на перегляд.</div>
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script>
+Chart.register(ChartDataLabels);
+Chart.defaults.color='#8B9BB6';
+Chart.defaults.font.family='IBM Plex Sans';
+Chart.defaults.font.size=10.5;
+Chart.defaults.plugins.legend.display=false;
+Chart.defaults.plugins.datalabels.color='#E7EDF7';
+Chart.defaults.plugins.datalabels.font={size:10,weight:'600'};
+const GRID={color:'#1E2A42'},NOGRID={display:false};
+const P={cyan:'#35D6E8',gold:'#F5C518',violet:'#8B7BF7',ok:'#3DD68C',lim:'#F5A524',
+         lost:'#F0524E',unk:'#6E7F9E',blue:'#4C8DF6'};
+const fmt=v=>v>=1e6?(v/1e6).toFixed(1)+' млн':v>=1e3?(v/1e3).toFixed(1)+' тис.':v;
+function barH(el,labels,data,color){return new Chart(el,{type:'bar',
+ data:{labels,datasets:[{data,backgroundColor:color||P.cyan,borderRadius:3,barThickness:13}]},
+ options:{indexAxis:'y',maintainAspectRatio:false,layout:{padding:{right:34}},
+  plugins:{datalabels:{anchor:'end',align:'end',formatter:fmt}},
+  scales:{x:{display:false,grid:NOGRID},y:{grid:NOGRID,ticks:{font:{size:10.5}}}}}});}
+function barV(el,labels,data,color){return new Chart(el,{type:'bar',
+ data:{labels,datasets:[{data,backgroundColor:color||P.cyan,borderRadius:3,maxBarThickness:26}]},
+ options:{maintainAspectRatio:false,layout:{padding:{top:18}},
+  plugins:{datalabels:{anchor:'end',align:'top',formatter:fmt}},
+  scales:{x:{grid:NOGRID},y:{display:false,grid:NOGRID}}}});}
+function donut(el,labels,data,colors){return new Chart(el,{type:'doughnut',
+ data:{labels,datasets:[{data,backgroundColor:colors,borderWidth:0}]},
+ options:{maintainAspectRatio:false,cutout:'56%',
+  plugins:{legend:{display:true,position:'right',labels:{boxWidth:9,font:{size:10.5},padding:7}},
+   datalabels:{formatter:(v,c)=>{const t=c.dataset.data.reduce((a,x)=>a+x,0);
+     return (v/t*100)>=6?Math.round(v/t*100)+'%':'';},color:'#0A0F1C',font:{size:10,weight:'700'}}}}});}
+</script><script>
+barH(k1,['до 10 %','10–25 %','25–50 %','50–75 %','понад 75 %'],[412,318,441,292,384],P.cyan);
+donut(k2,['Зареєстровано','Припиняється','Припинено','Банкрутство'],[1204,286,241,116],
+ [P.ok,P.lim,P.lost,P.unk]);
+barH(k3,['Сільське госп.','Торгівля','Будівництво','Переробка','Нерухомість','Транспорт','Інші'],
+ [412,388,241,196,168,142,300],P.violet);
+barH(k4,['Судові справи','Податковий борг','Виконавчі провадження','Санкційні списки','Банкрутство'],
+ [864,412,388,96,116],P.lost);
+barV(k5,['2022','2023','2024','2025'],[18400,21200,19800,24100],P.gold);
+</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Картка компанії — Реєстр активів АРМА</title>
+<link rel="icon" href="assets/img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="brand"><img src="assets/img/logo.png" alt="АРМА">
+      <div><b>Реєстр активів</b><span>АРМА · внутрішня система</span></div></div>
+    <nav>
+      <div class="grp">Аналітика</div>
+      <a href="index.html">Огляд портфеля</a>
+      <div class="grp">Категорії активів</div>
+      <a href="realestate.html">Нерухомість</a>
+      <a href="land.html">Земельні ділянки</a>
+      <a href="transport.html">Транспорт і техніка</a>
+      <a href="property.html">Рухоме та інше майно</a>
+      <a href="corporate.html" class="on">Корпоративні права</a>
+      <a href="money.html">Кошти, метали, ОВДП</a>
+      <a href="crypto.html">Криптоактиви</a>
+      <div class="grp">Робота з активами</div>
+      <a href="admin/index.html">Адміністрування</a>
+      <a href="admin/plans.html">Плани дій (CRM)</a>
+      <a href="admin/reports.html">Звіти</a>
+    </nav>
+    <div class="who"><b>Петренко П. П.</b>2 відділ ДМА · менеджер</div>
+  </aside>
+  <main>
+    <div class="topbar">
+      <div><h1>Картка компанії</h1><p class="sub">ТОВ «ВОЛИЦЯ-АГРО» · ЄДРПОУ 41027144</p></div>
+      <div class="demo">Демоверсія · дані умовні</div>
+    </div>
+
+<div class="grid g2">
+  <div class="panel">
+    <h3>ТОВ «ВОЛИЦЯ-АГРО» <span class="id">ЄДРПОУ 41027144</span></h3>
+    <dl class="kv">
+      <dt>Стан юридичної особи</dt><dd><span class="tag t-ok">Зареєстровано</span></dd>
+      <dt>Дата реєстрації</dt><dd>12.04.2017</dd>
+      <dt>Організаційна форма</dt><dd>Товариство з обмеженою відповідальністю</dd>
+      <dt>Статутний капітал</dt><dd>25 400 000 ₴</dd>
+      <dt>Основний КВЕД</dt><dd>01.11 Вирощування зернових культур</dd>
+      <dt>Юридична адреса</dt><dd>Львівська обл., Золочівський р-н, с. Волиця, вул. Central, 1</dd>
+      <dt>Керівник</dt><dd>заповнюється з YouControl</dd>
+      <dt>Кінцеві бенефіціари</dt><dd>заповнюється з YouControl</dd>
+      <dt>Частка АРМА</dt><dd>100,0 %</dd>
+      <dt>Відділ ДМА</dt><dd>1 відділ ДМА</dd>
+    </dl>
+  </div>
+  <div class="panel">
+    <h3>Ознаки ризику <span>YouControl</span></h3>
+    <span class="chip">Судові справи — 4</span><span class="chip">Податковий борг — немає</span>
+    <span class="chip">Санкційні списки — немає</span><span class="chip">Пов’язані особи — 7</span>
+    <span class="chip">Виконавчі провадження — 1</span>
+    <h3 style="margin-top:18px">Показники діяльності <span>млн ₴</span></h3>
+    <div class="chart"><canvas id="f1"></canvas></div>
+  </div>
+</div>
+
+<h2>Активи цієї компанії в реєстрі</h2>
+<div class="wrap-tbl"><table>
+<thead><tr><th>№ активу</th><th>Актив</th><th>Вид</th><th class="num">Частка</th>
+<th>Підрозділ</th><th>Правовий стан</th></tr></thead>
+<tbody>
+<tr><td><a class="id" href="asset.html">2316/0403/2022</a></td><td>Частка у статутному капіталі</td>
+<td>Корпоративні права</td><td class="num">100,0 %</td><td>1 відділ ДМА</td>
+<td><span class="tag t-lim">Обмежене</span></td></tr>
+<tr><td><a class="id" href="asset.html">2317/0403/2022</a></td><td>Цілісний майновий комплекс</td>
+<td>Нерухомість</td><td class="num">—</td><td>Західне МТУ</td>
+<td><span class="tag t-lim">Обмежене</span></td></tr>
+<tr><td><a class="id" href="asset.html">2318/0403/2022</a></td><td>Земельна ділянка 42,7 га</td>
+<td>Земельні ділянки</td><td class="num">—</td><td>Західне МТУ</td>
+<td><span class="tag t-ok">Повний обсяг</span></td></tr>
+</tbody></table></div>
+
+<h2>Поля, що наповнюються з YouControl</h2>
+<div class="wrap-tbl"><table>
+<thead><tr><th>Група полів</th><th>Метод API</th><th>Стан наповнення</th><th>Останнє оновлення</th></tr></thead>
+<tbody>
+<tr><td>Базова картка</td><td class="id">/company/{code}</td>
+<td><span class="tag t-ok">завантажено</span></td><td>02.09.2026</td></tr>
+<tr><td>Засновники та бенефіціари</td><td class="id">/company/{code}/founders</td>
+<td><span class="tag t-ok">завантажено</span></td><td>02.09.2026</td></tr>
+<tr><td>Фінансова звітність</td><td class="id">/company/{code}/finance</td>
+<td><span class="tag t-ok">завантажено</span></td><td>02.09.2026</td></tr>
+<tr><td>Судові справи</td><td class="id">/company/{code}/court</td>
+<td><span class="tag t-lim">часткове</span></td><td>02.09.2026</td></tr>
+<tr><td>Санкції, податковий борг</td><td class="id">/company/{code}/sanctions, /tax-debt</td>
+<td><span class="tag t-ok">завантажено</span></td><td>02.09.2026</td></tr>
+<tr><td>Пов’язані особи</td><td class="id">/company/{code}/related</td>
+<td><span class="tag t-unk">не завантажено</span></td><td>—</td></tr>
+</tbody></table></div>
+<div class="note" style="margin-top:12px">Редагувати додаткові поля можуть відділи ДМА, керівництво
+та адміністратор. Кнопка «Оновити з YouControl» доступна адміністратору; кожне звернення
+обліковується для контролю бюджету запитів.</div>
+
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script>
+Chart.register(ChartDataLabels);
+Chart.defaults.color='#8B9BB6';
+Chart.defaults.font.family='IBM Plex Sans';
+Chart.defaults.font.size=10.5;
+Chart.defaults.plugins.legend.display=false;
+Chart.defaults.plugins.datalabels.color='#E7EDF7';
+Chart.defaults.plugins.datalabels.font={size:10,weight:'600'};
+const GRID={color:'#1E2A42'},NOGRID={display:false};
+const P={cyan:'#35D6E8',gold:'#F5C518',violet:'#8B7BF7',ok:'#3DD68C',lim:'#F5A524',
+         lost:'#F0524E',unk:'#6E7F9E',blue:'#4C8DF6'};
+const fmt=v=>v>=1e6?(v/1e6).toFixed(1)+' млн':v>=1e3?(v/1e3).toFixed(1)+' тис.':v;
+function barH(el,labels,data,color){return new Chart(el,{type:'bar',
+ data:{labels,datasets:[{data,backgroundColor:color||P.cyan,borderRadius:3,barThickness:13}]},
+ options:{indexAxis:'y',maintainAspectRatio:false,layout:{padding:{right:34}},
+  plugins:{datalabels:{anchor:'end',align:'end',formatter:fmt}},
+  scales:{x:{display:false,grid:NOGRID},y:{grid:NOGRID,ticks:{font:{size:10.5}}}}}});}
+function barV(el,labels,data,color){return new Chart(el,{type:'bar',
+ data:{labels,datasets:[{data,backgroundColor:color||P.cyan,borderRadius:3,maxBarThickness:26}]},
+ options:{maintainAspectRatio:false,layout:{padding:{top:18}},
+  plugins:{datalabels:{anchor:'end',align:'top',formatter:fmt}},
+  scales:{x:{grid:NOGRID},y:{display:false,grid:NOGRID}}}});}
+function donut(el,labels,data,colors){return new Chart(el,{type:'doughnut',
+ data:{labels,datasets:[{data,backgroundColor:colors,borderWidth:0}]},
+ options:{maintainAspectRatio:false,cutout:'56%',
+  plugins:{legend:{display:true,position:'right',labels:{boxWidth:9,font:{size:10.5},padding:7}},
+   datalabels:{formatter:(v,c)=>{const t=c.dataset.data.reduce((a,x)=>a+x,0);
+     return (v/t*100)>=6?Math.round(v/t*100)+'%':'';},color:'#0A0F1C',font:{size:10,weight:'700'}}}}});}
+</script><script>
+new Chart(f1,{type:'bar',data:{labels:['2022','2023','2024','2025'],datasets:[
+ {label:'Дохід',data:[84,102,96,118],backgroundColor:P.cyan,borderRadius:3,maxBarThickness:20},
+ {label:'Прибуток',data:[6,11,4,14],backgroundColor:P.gold,borderRadius:3,maxBarThickness:20}]},
+ options:{maintainAspectRatio:false,layout:{padding:{top:16}},
+  plugins:{legend:{display:true,labels:{boxWidth:9,font:{size:10.5}}},
+   datalabels:{anchor:'end',align:'top',formatter:v=>v}},
+  scales:{x:{grid:NOGRID},y:{display:false}}}});
+</script>
+</body>
+</html>

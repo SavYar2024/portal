@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Земельні ділянки — Реєстр активів АРМА</title>
+<link rel="icon" href="assets/img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="brand"><img src="assets/img/logo.png" alt="АРМА">
+      <div><b>Реєстр активів</b><span>АРМА · внутрішня система</span></div></div>
+    <nav>
+      <div class="grp">Аналітика</div>
+      <a href="index.html">Огляд портфеля</a>
+      <div class="grp">Категорії активів</div>
+      <a href="realestate.html">Нерухомість</a>
+      <a href="land.html" class="on">Земельні ділянки</a>
+      <a href="transport.html">Транспорт і техніка</a>
+      <a href="property.html">Рухоме та інше майно</a>
+      <a href="corporate.html">Корпоративні права</a>
+      <a href="money.html">Кошти, метали, ОВДП</a>
+      <a href="crypto.html">Криптоактиви</a>
+      <div class="grp">Робота з активами</div>
+      <a href="admin/index.html">Адміністрування</a>
+      <a href="admin/plans.html">Плани дій (CRM)</a>
+      <a href="admin/reports.html">Звіти</a>
+    </nav>
+    <div class="who"><b>Петренко П. П.</b>2 відділ ДМА · менеджер</div>
+  </aside>
+  <main>
+    <div class="topbar">
+      <div><h1>Земельні ділянки</h1><p class="sub">Кадастрові дані, полігони, GeoJSON</p></div>
+      <div class="demo">Демоверсія · дані умовні</div>
+    </div>
+<div class="grid g4"><div class="panel kpi"><h3>Ділянок</h3><div class="v">4 764</div><div class="d">3 123 мають кадастровий номер</div></div><div class="panel kpi"><h3>Загальна площа</h3><div class="v">18 407 <small>га</small></div><div class="d">за завантаженими полігонами</div></div><div class="panel kpi"><h3>Полігони завантажено</h3><div class="v">2 891</div><div class="d">зіставлено за кадастровим номером</div></div><div class="panel kpi"><h3>Без геоприв’язки</h3><div class="v">1 641</div><div class="d">потребують кадастру або точки</div></div></div><h2>Аналітика за категорією</h2><div class="grid g3"><div class="panel"><h3>За цільовим призначенням <span>ділянок</span></h3><div class="chart"><canvas id="l1"></canvas></div></div><div class="panel"><h3>За областями <span>топ-8</span></h3><div class="chart"><canvas id="l2"></canvas></div></div><div class="panel"><h3>Площа за групами <span>га</span></h3><div class="chart"><canvas id="l3"></canvas></div></div></div><h2>Карта ділянок</h2><div id="map" class="map"></div><h2>Завантаження полігонів</h2>
+<div class="panel"><div class="grid g2">
+  <div>
+    <div class="field"><label>Файл GeoJSON</label><input type="file" accept=".geojson,.json"></div>
+    <div class="field"><label>Спосіб зіставлення</label>
+      <select><option>За кадастровим номером у властивостях (рекомендовано)</option>
+      <option>За номером активу</option><option>Вручну для однієї ділянки</option></select></div>
+    <button class="btn gold">Завантажити та зіставити</button>
+  </div>
+  <div><div class="note">З кожного об’єкта береться властивість <span class="id">cadnum</span>,
+   шукається актив із таким кадастровим номером, полігон зберігається в PostGIS, обчислюються
+   площа і центроїд. Об’єкти без збігу потрапляють у перелік нерозпізнаних.</div>
+   <p class="hint" style="margin-top:8px">EPSG:4326. Файли в УСК-2000 перепроєктуються автоматично.</p>
+  </div></div></div><h2>Перелік ділянок</h2><div class="filters">
+  <input placeholder="Пошук: номер, назва, ЄДРПОУ, адреса" style="min-width:290px">
+  <select><option>Усі області</option><option>Вінницька</option><option>Волинська</option><option>Дніпропетровська</option><option>Донецька</option><option>Житомирська</option><option>Закарпатська</option><option>Запорізька</option><option>Івано-Франківська</option><option>Київська</option><option>м. Київ</option><option>Кіровоградська</option><option>Луганська</option><option>Львівська</option><option>Миколаївська</option><option>Одеська</option><option>Полтавська</option><option>Рівненська</option><option>Сумська</option><option>Тернопільська</option><option>Харківська</option><option>Херсонська</option><option>Хмельницька</option><option>Черкаська</option><option>Чернівецька</option><option>Чернігівська</option><option>АР Крим</option><option>м. Севастополь</option></select>
+  <select><option>Усі МТУ</option><option>Центральне МТУ</option><option>Північно-східне МТУ</option><option>Західне МТУ</option><option>Південно-східне МТУ</option><option>Південне МТУ</option><option>Центрально-західне ТУ</option></select>
+  <select><option>Усі відділи ДМА</option><option>2 відділ ДМА</option><option>3 відділ ДМА</option><option>1 відділ ДМА</option><option>Відділ реалізації</option><option>Відділ коштів і металів</option><option>4 відділ ДМА</option><option>Конкурсний відділ</option></select>
+  <select><option>Правовий стан</option><option>Повний обсяг</option><option>Обмежене</option>
+    <option>Право втрачено</option><option>Уточнюється</option></select>
+  
+  <button class="btn">Знайти</button><button class="btn gold">Експорт XLSX</button>
+</div><div class="wrap-tbl"><table><thead><tr><th>№ активу</th><th>Кадастровий номер</th><th class="num">Площа, га</th><th>Цільове призначення</th><th>Область</th><th>Підрозділ</th><th>Полігон</th></tr></thead><tbody><tr><td><a class="id" href="asset.html">1122/0602/2021</a></td><td><span class="id">3210500000:01:012:0045</span></td><td class="num">2,4517</td><td>Для розміщення виробництва</td><td>Київська</td><td>Центральне МТУ</td><td><span class="tag t-ok">завантажено</span></td></tr><tr><td><a class="id" href="asset.html">1145/0602/2021</a></td><td><span class="id">3221886000:04:005:0117</span></td><td class="num">18,7300</td><td>Товарне с/г виробництво</td><td>Київська</td><td>Центральне МТУ</td><td><span class="tag t-ok">завантажено</span></td></tr><tr><td><a class="id" href="asset.html">1207/0602/2021</a></td><td><span class="id">3223155400:02:009:0301</span></td><td class="num">0,1000</td><td>Будівництво житлового будинку</td><td>Київська</td><td>Центральне МТУ</td><td><span class="tag t-unk">немає</span></td></tr></tbody></table></div>
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script>
+Chart.register(ChartDataLabels);
+Chart.defaults.color='#8B9BB6';
+Chart.defaults.font.family='IBM Plex Sans';
+Chart.defaults.font.size=10.5;
+Chart.defaults.plugins.legend.display=false;
+Chart.defaults.plugins.datalabels.color='#E7EDF7';
+Chart.defaults.plugins.datalabels.font={size:10,weight:'600'};
+const GRID={color:'#1E2A42'},NOGRID={display:false};
+const P={cyan:'#35D6E8',gold:'#F5C518',violet:'#8B7BF7',ok:'#3DD68C',lim:'#F5A524',
+         lost:'#F0524E',unk:'#6E7F9E',blue:'#4C8DF6'};
+const fmt=v=>v>=1e6?(v/1e6).toFixed(1)+' млн':v>=1e3?(v/1e3).toFixed(1)+' тис.':v;
+function barH(el,labels,data,color){return new Chart(el,{type:'bar',
+ data:{labels,datasets:[{data,backgroundColor:color||P.cyan,borderRadius:3,barThickness:13}]},
+ options:{indexAxis:'y',maintainAspectRatio:false,layout:{padding:{right:34}},
+  plugins:{datalabels:{anchor:'end',align:'end',formatter:fmt}},
+  scales:{x:{display:false,grid:NOGRID},y:{grid:NOGRID,ticks:{font:{size:10.5}}}}}});}
+function barV(el,labels,data,color){return new Chart(el,{type:'bar',
+ data:{labels,datasets:[{data,backgroundColor:color||P.cyan,borderRadius:3,maxBarThickness:26}]},
+ options:{maintainAspectRatio:false,layout:{padding:{top:18}},
+  plugins:{datalabels:{anchor:'end',align:'top',formatter:fmt}},
+  scales:{x:{grid:NOGRID},y:{display:false,grid:NOGRID}}}});}
+function donut(el,labels,data,colors){return new Chart(el,{type:'doughnut',
+ data:{labels,datasets:[{data,backgroundColor:colors,borderWidth:0}]},
+ options:{maintainAspectRatio:false,cutout:'56%',
+  plugins:{legend:{display:true,position:'right',labels:{boxWidth:9,font:{size:10.5},padding:7}},
+   datalabels:{formatter:(v,c)=>{const t=c.dataset.data.reduce((a,x)=>a+x,0);
+     return (v/t*100)>=6?Math.round(v/t*100)+'%':'';},color:'#0A0F1C',font:{size:10,weight:'700'}}}}});}
+</script><script>
+barH(l1,['Товарне с/г виробництво','ОСГ','Промисловість','Житлова забудова','Комерційне','Інше'],
+ [1842,1104,712,486,388,232],P.ok);
+barH(l2,['Київська','Одеська','Львівська','Полтавська','Вінницька','Херсонська','Черкаська','Інші'],
+ [684,612,548,441,398,352,286,1443],P.gold);
+barV(l3,['<1 га','1–5','5–20','20–100','>100'],[1842,1204,884,612,222],P.cyan);
+const map=L.map('map').setView([49.5,31.2],6);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,
+ attribution:'© OpenStreetMap'}).addTo(map);
+[[50.5203,30.2502,'1122/0602/2021','2,45 га'],[50.3110,30.9640,'1145/0602/2021','18,73 га'],
+ [50.7415,30.2380,'1207/0602/2021','0,10 га']].forEach(l=>{
+  L.circleMarker([l[0],l[1]],{radius:9,color:'#F5C518',fillColor:'#F5C518',fillOpacity:.45})
+   .addTo(map).bindPopup('<b>'+l[2]+'</b><br>'+l[3]);});
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Кошти, метали, ОВДП — Реєстр активів АРМА</title>
+<link rel="icon" href="assets/img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="brand"><img src="assets/img/logo.png" alt="АРМА">
+      <div><b>Реєстр активів</b><span>АРМА · внутрішня система</span></div></div>
+    <nav>
+      <div class="grp">Аналітика</div>
+      <a href="index.html">Огляд портфеля</a>
+      <div class="grp">Категорії активів</div>
+      <a href="realestate.html">Нерухомість</a>
+      <a href="land.html">Земельні ділянки</a>
+      <a href="transport.html">Транспорт і техніка</a>
+      <a href="property.html">Рухоме та інше майно</a>
+      <a href="corporate.html">Корпоративні права</a>
+      <a href="money.html" class="on">Кошти, метали, ОВДП</a>
+      <a href="crypto.html">Криптоактиви</a>
+      <div class="grp">Робота з активами</div>
+      <a href="admin/index.html">Адміністрування</a>
+      <a href="admin/plans.html">Плани дій (CRM)</a>
+      <a href="admin/reports.html">Звіти</a>
+    </nav>
+    <div class="who"><b>Петренко П. П.</b>2 відділ ДМА · менеджер</div>
+  </aside>
+  <main>
+    <div class="topbar">
+      <div><h1>Кошти, метали, ОВДП</h1><p class="sub">Розміщення грошових активів і дохід</p></div>
+      <div class="demo">Демоверсія · дані умовні</div>
+    </div>
+<div class="grid g4"><div class="panel kpi"><h3>На депозитах</h3><div class="v">878 <small>млн ₴</small></div><div class="d">4 банки, середня 14,9 %</div></div><div class="panel kpi"><h3>В ОВДП</h3><div class="v">602 <small>млн ₴</small></div><div class="d">3 випуски, 2026–2028</div></div><div class="panel kpi"><h3>Банківські метали</h3><div class="v">26,7 <small>млн ₴</small></div><div class="d">золото 12,4 кг, срібло 88 кг</div></div><div class="panel kpi"><h3>Не розміщено</h3><div class="v">916 <small>млн ₴</small></div><div class="d">1 722 активи</div></div></div><h2>Аналітика розміщення</h2><div class="grid g3"><div class="panel"><h3>Структура розміщення <span>млн ₴</span></h3><div class="chart"><canvas id="d1"></canvas></div></div><div class="panel"><h3>Депозити за банками <span>млн ₴</span></h3><div class="chart"><canvas id="d2"></canvas></div></div><div class="panel"><h3>Погашення ОВДП <span>млн ₴ за роками</span></h3><div class="chart"><canvas id="d3"></canvas></div></div></div>
+<h2>Депозити</h2>
+<div class="wrap-tbl"><table><thead><tr><th>Банк</th><th class="num">Сума, ₴</th>
+<th class="num">Ставка</th><th class="num">Дохід за рік, ₴</th></tr></thead><tbody><tr><td>АТ «Ощадбанк»</td><td class="num">412 500 000</td><td class="num">15.5 %</td><td class="num">63 937 500</td></tr><tr><td>АТ «Укрексімбанк»</td><td class="num">268 300 000</td><td class="num">14.8 %</td><td class="num">39 708 400</td></tr><tr><td>АТ «Укргазбанк»</td><td class="num">155 900 000</td><td class="num">14.2 %</td><td class="num">22 137 800</td></tr><tr><td>АБ «Ощадбанк» (USD)</td><td class="num">41 400 000</td><td class="num">3.1 %</td><td class="num">1 283 400</td></tr></tbody></table></div>
+
+<h2>Облігації внутрішньої державної позики</h2>
+<div class="wrap-tbl"><table><thead><tr><th>ISIN</th><th class="num">Обсяг, ₴</th><th>Погашення</th>
+<th class="num">Дохідність</th><th class="num">Дохід за рік, ₴</th></tr></thead>
+<tbody><tr><td class="id">UA4000227371</td><td class="num">320 000 000</td><td>18.03.2027</td><td class="num">17.2 %</td><td class="num">55 040 000</td></tr><tr><td class="id">UA4000229104</td><td class="num">185 400 000</td><td>12.09.2026</td><td class="num">16.4 %</td><td class="num">30 405 600</td></tr><tr><td class="id">UA4000231688</td><td class="num">96 800 000</td><td>24.06.2028</td><td class="num">17.9 %</td><td class="num">17 327 200</td></tr></tbody></table></div>
+
+<div class="note" style="margin-top:14px">Категорія закріплена за відділом грошових коштів
+та банківських металів ДМА. За правилом розподілу активи цієї категорії за МТУ не закріплюються.</div>
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script>
+Chart.register(ChartDataLabels);
+Chart.defaults.color='#8B9BB6';
+Chart.defaults.font.family='IBM Plex Sans';
+Chart.defaults.font.size=10.5;
+Chart.defaults.plugins.legend.display=false;
+Chart.defaults.plugins.datalabels.color='#E7EDF7';
+Chart.defaults.plugins.datalabels.font={size:10,weight:'600'};
+const GRID={color:'#1E2A42'},NOGRID={display:false};
+const P={cyan:'#35D6E8',gold:'#F5C518',violet:'#8B7BF7',ok:'#3DD68C',lim:'#F5A524',
+         lost:'#F0524E',unk:'#6E7F9E',blue:'#4C8DF6'};
+const fmt=v=>v>=1e6?(v/1e6).toFixed(1)+' млн':v>=1e3?(v/1e3).toFixed(1)+' тис.':v;
+function barH(el,labels,data,color){return new Chart(el,{type:'bar',
+ data:{labels,datasets:[{data,backgroundColor:color||P.cyan,borderRadius:3,barThickness:13}]},
+ options:{indexAxis:'y',maintainAspectRatio:false,layout:{padding:{right:34}},
+  plugins:{datalabels:{anchor:'end',align:'end',formatter:fmt}},
+  scales:{x:{display:false,grid:NOGRID},y:{grid:NOGRID,ticks:{font:{size:10.5}}}}}});}
+function barV(el,labels,data,color){return new Chart(el,{type:'bar',
+ data:{labels,datasets:[{data,backgroundColor:color||P.cyan,borderRadius:3,maxBarThickness:26}]},
+ options:{maintainAspectRatio:false,layout:{padding:{top:18}},
+  plugins:{datalabels:{anchor:'end',align:'top',formatter:fmt}},
+  scales:{x:{grid:NOGRID},y:{display:false,grid:NOGRID}}}});}
+function donut(el,labels,data,colors){return new Chart(el,{type:'doughnut',
+ data:{labels,datasets:[{data,backgroundColor:colors,borderWidth:0}]},
+ options:{maintainAspectRatio:false,cutout:'56%',
+  plugins:{legend:{display:true,position:'right',labels:{boxWidth:9,font:{size:10.5},padding:7}},
+   datalabels:{formatter:(v,c)=>{const t=c.dataset.data.reduce((a,x)=>a+x,0);
+     return (v/t*100)>=6?Math.round(v/t*100)+'%':'';},color:'#0A0F1C',font:{size:10,weight:'700'}}}}});}
+</script><script>
+donut(d1,['Депозити','ОВДП','Метали','Не розміщено'],
+ [878,602,27,915],[P.cyan,P.ok,P.gold,P.unk]);
+barH(d2,['Ощадбанк','Укрексімбанк','Укргазбанк','Ощадбанк USD'],[412,268,156,41],P.cyan);
+barV(d3,['2026','2027','2028'],[185,320,97],P.ok);
+</script>
+</body>
+</html>

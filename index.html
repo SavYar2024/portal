@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Огляд портфеля — Реєстр активів АРМА</title>
+<link rel="icon" href="assets/img/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="brand"><img src="assets/img/logo.png" alt="АРМА">
+      <div><b>Реєстр активів</b><span>АРМА · внутрішня система</span></div></div>
+    <nav>
+      <div class="grp">Аналітика</div>
+      <a href="index.html" class="on">Огляд портфеля</a>
+      <div class="grp">Категорії активів</div>
+      <a href="realestate.html">Нерухомість</a>
+      <a href="land.html">Земельні ділянки</a>
+      <a href="transport.html">Транспорт і техніка</a>
+      <a href="property.html">Рухоме та інше майно</a>
+      <a href="corporate.html">Корпоративні права</a>
+      <a href="money.html">Кошти, метали, ОВДП</a>
+      <a href="crypto.html">Криптоактиви</a>
+      <div class="grp">Робота з активами</div>
+      <a href="admin/index.html">Адміністрування</a>
+      <a href="admin/plans.html">Плани дій (CRM)</a>
+      <a href="admin/reports.html">Звіти</a>
+    </nav>
+    <div class="who"><b>Петренко П. П.</b>2 відділ ДМА · менеджер</div>
+  </aside>
+  <main>
+    <div class="topbar">
+      <div><h1>Огляд портфеля</h1><p class="sub">Стан на 24 серпня 2026 року</p></div>
+      <div class="demo">Демоверсія · дані умовні</div>
+    </div>
+
+<div class="grid g5">
+  <div class="panel kpi"><h3>Активів в обліку</h3><div class="v">60 530</div>
+    <div class="d">оновлено 24.08.2026</div></div>
+  <div class="panel kpi"><h3>Оцінена вартість</h3><div class="v">915,6<small>млн ₴</small></div>
+    <div class="d">чинні звіти — 24 % активів</div></div>
+  <div class="panel kpi"><h3>Інвестиційно привабливі</h3><div class="v">17 369</div>
+    <div class="d">ведуться за планами дій ДМА</div></div>
+  <div class="panel kpi"><h3>В управлінні</h3><div class="v">3 868</div>
+    <div class="d">+2 066 у конкурсних процедурах</div></div>
+  <div class="panel kpi"><h3>Право втрачено</h3><div class="v" style="color:var(--lost)">18 235</div>
+    <div class="d">арешт скасовано або актив вилучено</div></div>
+</div>
+
+<h2>Обсяг повноважень АРМА за портфелем</h2>
+<div class="panel">
+  <div class="bar">
+    <div class="s-ok" style="width:36.1%">36.1%</div>
+    <div class="s-lim" style="width:15.4%">15.4%</div>
+    <div class="s-lost" style="width:30.1%">30.1%</div>
+    <div class="s-unk" style="width:18.4%">18.4%</div>
+  </div>
+  <div class="legend">
+    <div class="l-ok"><b>21 840</b>управління в повному обсязі</div>
+    <div class="l-lim"><b>9 310</b>обмежене — без заборони користування</div>
+    <div class="l-lost"><b>18 235</b>право втрачено</div>
+    <div class="l-unk"><b>11 145</b>потребує уточнення</div>
+  </div>
+</div>
+
+<h2>Структура портфеля</h2>
+<div class="grid g3">
+  <div class="panel"><h3>За категоріями <span>активів</span></h3>
+    <div class="chart"><canvas id="c1"></canvas></div></div>
+  <div class="panel"><h3>Інвестиційна привабливість <span>скринінг</span></h3>
+    <div class="chart"><canvas id="c2"></canvas></div></div>
+  <div class="panel"><h3>Стан арешту <span>інвентаризація</span></h3>
+    <div class="chart"><canvas id="c3"></canvas></div></div>
+</div>
+
+<div class="grid g3" style="margin-top:14px">
+  <div class="panel"><h3>Закріплення за МТУ <span>за юрисдикцією</span></h3>
+    <div class="chart"><canvas id="c4"></canvas></div></div>
+  <div class="panel"><h3>Закріплення за відділами ДМА <span>активів</span></h3>
+    <div class="chart"><canvas id="c5"></canvas></div></div>
+  <div class="panel"><h3>Не розподілено <span>2 611 активів</span></h3>
+    <div class="chart"><canvas id="c6"></canvas></div></div>
+</div>
+
+<h2>Активи, що потребують процесуального рішення</h2>
+<div class="wrap-tbl"><table>
+<thead><tr><th>№ активу</th><th>Актив</th><th>Підрозділ</th><th>Правовий стан</th><th>Дія</th></tr></thead>
+<tbody>
+<tr><td class="id">5410/0301/2022</td><td>Вагон-цистерна, партія 8 од.</td><td>2 відділ ДМА</td>
+<td><span class="tag t-lost">Право втрачено</span></td><td>Звернення щодо повторного арешту</td></tr>
+<tr><td class="id">2316/0403/2022</td><td>Частка ТОВ «ВОЛИЦЯ-АГРО», 100 %</td><td>1 відділ ДМА</td>
+<td><span class="tag t-lim">Обмежене</span></td><td>Клопотання про заборону користування</td></tr>
+<tr><td class="id">7781/0201/2024</td><td>Трактор John Deere 8400R</td><td>не розподілено</td>
+<td><span class="tag t-unk">Потребує уточнення</span></td><td>Закріпити за підрозділом</td></tr>
+</tbody></table></div>
+
+  </main>
+</div>
+<script src="assets/js/data.js"></script>
+<script>
+Chart.register(ChartDataLabels);
+Chart.defaults.color='#8B9BB6';
+Chart.defaults.font.family='IBM Plex Sans';
+Chart.defaults.font.size=10.5;
+Chart.defaults.plugins.legend.display=false;
+Chart.defaults.plugins.datalabels.color='#E7EDF7';
+Chart.defaults.plugins.datalabels.font={size:10,weight:'600'};
+const GRID={color:'#1E2A42'},NOGRID={display:false};
+const P={cyan:'#35D6E8',gold:'#F5C518',violet:'#8B7BF7',ok:'#3DD68C',lim:'#F5A524',
+         lost:'#F0524E',unk:'#6E7F9E',blue:'#4C8DF6'};
+const fmt=v=>v>=1e6?(v/1e6).toFixed(1)+' млн':v>=1e3?(v/1e3).toFixed(1)+' тис.':v;
+function barH(el,labels,data,color){return new Chart(el,{type:'bar',
+ data:{labels,datasets:[{data,backgroundColor:color||P.cyan,borderRadius:3,barThickness:13}]},
+ options:{indexAxis:'y',maintainAspectRatio:false,layout:{padding:{right:34}},
+  plugins:{datalabels:{anchor:'end',align:'end',formatter:fmt}},
+  scales:{x:{display:false,grid:NOGRID},y:{grid:NOGRID,ticks:{font:{size:10.5}}}}}});}
+function barV(el,labels,data,color){return new Chart(el,{type:'bar',
+ data:{labels,datasets:[{data,backgroundColor:color||P.cyan,borderRadius:3,maxBarThickness:26}]},
+ options:{maintainAspectRatio:false,layout:{padding:{top:18}},
+  plugins:{datalabels:{anchor:'end',align:'top',formatter:fmt}},
+  scales:{x:{grid:NOGRID},y:{display:false,grid:NOGRID}}}});}
+function donut(el,labels,data,colors){return new Chart(el,{type:'doughnut',
+ data:{labels,datasets:[{data,backgroundColor:colors,borderWidth:0}]},
+ options:{maintainAspectRatio:false,cutout:'56%',
+  plugins:{legend:{display:true,position:'right',labels:{boxWidth:9,font:{size:10.5},padding:7}},
+   datalabels:{formatter:(v,c)=>{const t=c.dataset.data.reduce((a,x)=>a+x,0);
+     return (v/t*100)>=6?Math.round(v/t*100)+'%':'';},color:'#0A0F1C',font:{size:10,weight:'700'}}}}});}
+</script><script>
+barH(c1,ARMA.cats.map(x=>x[0]),ARMA.cats.map(x=>x[1]),P.cyan);
+donut(c2,ARMA.invest.map(x=>x[0]),ARMA.invest.map(x=>x[1]),[P.ok,'#7FB89A',P.lim,'#41526F']);
+barH(c3,ARMA.arrest.map(x=>x[0]),ARMA.arrest.map(x=>x[1]),P.violet);
+barH(c4,ARMA.mtu.map(x=>x[0].replace(' МТУ','').replace(' ТУ','')),ARMA.mtu.map(x=>x[1]),P.gold);
+barH(c5,ARMA.dma.map(x=>x[0].replace(' ДМА','')),ARMA.dma.map(x=>x[1]),P.blue);
+barH(c6,ARMA.unassigned.map(x=>x[0]),ARMA.unassigned.map(x=>x[1]),P.lost);
+</script>
+</body>
+</html>
